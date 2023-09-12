@@ -1,0 +1,20 @@
+.rotate {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+      }
+    }
+
+.optional {
+  font-size: 10px;
+}
+
+.sidebar-menu li > a > .pull-right-container {
+  margin-top: -15px !important;
+}
