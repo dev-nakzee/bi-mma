@@ -17,7 +17,21 @@
                         </div>
                         <textarea id="inp_editor1" >
                             &lt;p&gt;Initial Document Content&lt;/p&gt; 
-                        </textarea>  
+                        </textarea>
+                        <div class="form-group">
+                            <label for="page-short">Page Description</label>
+                            <textarea class="form-control" id="page-short"></textarea>
+                        </div>  
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>                          
+                        <div class="form-group">
+                            <label for="page-description">Image Alt</label>
+                            <textarea class="form-control" id="page-description"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="page-title">SEO Title</label>
                             <input type="text" class="form-control" id="page-title">
