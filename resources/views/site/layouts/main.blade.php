@@ -11,9 +11,16 @@
   </head>
   <body>
       <div class="d-flex">
-        <div>
-          <img src="{{ asset('assets/site/images/logomma.png')}}"/>
-        </div>
+          <div class="col-12 bg-dark p-1">
+            <a class="text-light ms-3" href="#"><i class="fa-light fa-globe"></i> Click for global enquiries</a>
+            <a class="text-light me-2 float-end" href="tel:123-456-7890"><i class="fa fa-phone"></i> 123-456-7890</a>
+            <a class="text-light me-3 float-end" href = "mailto:abc@example.com"><i class="fa fa-envelope"></i> abc@example.com</a>
+          </div>
+          <div class="col-12 row">
+            <div class="col-3">
+              <img class="site-logo p-2" src="{{ asset('assets/site/images/logomma.png')}}"/>
+            </div>
+          </div>
       </div>
       <!-- Menu -->
       <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange">
@@ -49,15 +56,122 @@
                     <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
                 </ul>
               </div>
-              <div class="navbar-nav">
-                <button class="btn btn-outline-dark btn-sm ms-auto me-2 mb-1 float-sm-end"><i class="fa fa-user-plus"></i> <span class="d-none d-inline d-lg-inline">Register</span></button>
-                <button class="btn btn-outline-dark btn-sm me-2 float-sm-end"><i class="fa fa-user"></i> <span class="d-none d-inline d-lg-inline">Login<i></button>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-sm-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></button>
+                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-sm-end"><i class="fa fa-user"></i> <span class="">Login<i></button>
               </div>
           </div>
       </nav>
     <!-- Ends -->
 
     @yield('content')
+
+    <div class="container-fluid footer px-4">
+      <div class="row pt-5 pb-5 ">
+        <div class="col-md-3">
+          <h5>About Us</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+          <ul class="nav flex-column">
+            <li class="nav-item"><i class="fa fa-map-marker-alt"></i> <a href="geo:124.028582,-29.201930" target="_blank">123 Street, New York, NY 10016</a></li>
+            <li class="nav-item"><i class="fa fa-phone"></i> <a href="tel:123-456-7890">123-456-7890</a></li>
+            <li class="nav-item"><i class="fa fa-envelope"></i> <a href = "mailto:abc@example.com">abc@example.com</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Important Links</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">About us</a></li>
+            <li class="nav-item"><a href="#">Careers</a></li>
+            <li class="nav-item"><a href="#">News &amp; Blogs</a></li>
+            <li class="nav-item"><a href="#">Terms &amp; conditions</a></li>
+            <li class="nav-item"><a href="#">Privacy Policy</a></li>
+            <li class="nav-item"><a href="#">Contact us</a></li>
+          </ul>
+          <h5 class="mt-4">Partner with us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#">Become Service Partner</a></li>
+            <li class="nav-item"><a href="#">Become Channel Partner</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Services</h5>
+          <ul class="nav flex-column">
+            <li> <a href="#">
+              BIS/ CRS Registration
+          </a>
+      </li>
+            <li> <a href="#">
+              BEE Registration
+          </a>
+      </li>
+       <li> <a href="#">
+              EPRA for Battery Waste
+          </a>
+      </li>
+          <li> <a href="#">
+              EPRA for E-Waste
+          </a>
+      </li>
+       <li> <a href="#">
+              WPC-ETA Approval
+          </a>
+      </li>
+      <li> <a href="#">
+              EPR Authorization for P-Waste Products
+          </a>
+      </li>
+      <li> <a href="#">
+              ISI / BIS Certification
+          </a>
+      </li>
+      <li> <a href="#">
+              TEC Certification
+          </a>
+      </li>
+          </ul>
+          <h5 class="mt-4">Industries</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#">Mandatory Product List</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Recent Notifications</h5>
+          <div id="carouselExampleControls" class="carousel slide p-3 bg-orange" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+              </div>
+              <div class="carousel-item">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+              </div>
+              <div class="carousel-item">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>          
+          </div>
+          <h5 class="mt-4">Connect with us</h5>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-pinterest fa-lg"></i></a></li>
+            <li class="nav-item"><a class="nav-link pb-0" href="#"><i class="fa-brands fa-google fa-lg"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 text-center pb-2" style="font: 12px arial;"><p>Copyright &copy; {{ date('Y');}} {{ env('COMPANY_NAME')}}. All Rights Reserved.</p></div>
+    </div>
     <script src="{{ asset('assets/site/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/site/js/bootstrap.bundle.min.js')}}" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/site/js/custom.min.js') }}"></script>

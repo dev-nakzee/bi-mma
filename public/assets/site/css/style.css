@@ -1,9 +1,32 @@
+
+.site-logo {
+	height: 70px;
+}
 .bg-orange {
     background-color: #fd7e14;
 }
 .nav-link {
     color: #fff !important;
 }
+.footer{
+	background: #007bff;
+	color: #fff !important;
+	
+}
+.footer h5 {
+	font-style: normal;
+	text-decoration: none;
+}
+.footer a {
+	color: #fff !important;
+	font-style: normal;
+	text-decoration: none;
+	font-size: 14px !important;
+}
+.footer a .fa-brands {
+	font-size: 22px !important;
+}
+
 @media all and (min-width: 992px) {
 	.dropdown-menu {
 		width: 13rem;
