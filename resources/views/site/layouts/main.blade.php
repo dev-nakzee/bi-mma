@@ -10,15 +10,19 @@
     <link href="{{ asset('assets/site/css/style.css')}}" rel="stylesheet">
   </head>
   <body>
-      <div class="d-flex">
-          <div class="col-12 bg-dark p-1">
+      <div class="container-fuild">
+          <div class="col-12 bg-dark p-1 top-bar">
             <a class="text-light ms-3" href="#"><i class="fa-light fa-globe"></i> Click for global enquiries</a>
             <a class="text-light me-2 float-end" href="tel:123-456-7890"><i class="fa fa-phone"></i> 123-456-7890</a>
             <a class="text-light me-3 float-end" href = "mailto:abc@example.com"><i class="fa fa-envelope"></i> abc@example.com</a>
           </div>
-          <div class="col-12 row">
-            <div class="col-3">
-              <img class="site-logo p-2" src="{{ asset('assets/site/images/logomma.png')}}"/>
+          <div class="col-12 row bg-light px-2">
+            <div class="col-3"> 
+              <img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/>
+            </div>
+            <div class="col-9 pe-0">
+              <img class="header-img p-2 float-end d-none d-lg-inline" src="{{ asset('assets/site/images/raclogo1.png')}}"/>
+              <img class="header-img p-2 float-end d-none d-lg-inline" src="{{ asset('assets/site/images/aajadi.jpg')}}"/>
             </div>
           </div>
       </div>
@@ -57,8 +61,8 @@
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
-                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-sm-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></button>
-                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-sm-end"><i class="fa fa-user"></i> <span class="">Login<i></button>
+                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></button>
+                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></button>
               </div>
           </div>
       </nav>

@@ -1,5 +1,11 @@
-
+.top-bar a {
+	text-decoration: none;
+	font-size: small;
+}
 .site-logo {
+	height: 70px;
+}
+.header-img {
 	height: 70px;
 }
 .bg-orange {
