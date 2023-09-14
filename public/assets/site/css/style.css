@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+}
 .top-bar a {
 	text-decoration: none;
 	font-size: small;
@@ -11,9 +17,53 @@
 .bg-orange {
     background-color: #fd7e14;
 }
+.bg-grey-light {
+    background-color: #eee;
+}
+
+.bg-blue {
+    background-color: #007bff;
+}
 .nav-link {
     color: #fff !important;
 }
+.service-links a {
+	display: block;
+	border: #fd7e14 1px solid;
+	border-bottom: #fd7e14 8px solid !important;
+	border-radius: 5px;
+	padding: 10px;
+	text-decoration: none;
+	color: #333;
+	min-height: 180px !important;
+	
+}
+.service-links a img {
+    width:  70px;
+    height: 70px;
+    object-fit: cover;
+	margin-bottom: 14px;
+}
+.service-links a p {
+	font-weight: 700;
+}
+.service-icon {
+	margin-top: 0;
+    margin-bottom: 1rem;
+	list-style: none;
+}
+.service-icon li {
+	float: left;
+    margin: 16px;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    position: relative;
+    overflow: revert;
+    background: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 20px #4e4e4e;
+}
+
 .footer{
 	background: #007bff;
 	color: #fff !important;

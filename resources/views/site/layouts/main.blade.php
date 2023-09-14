@@ -61,8 +61,8 @@
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
-                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></button>
-                <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></button>
+                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></a>
+                <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
               </div>
           </div>
       </nav>
