@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prod_compl_maps', function (Blueprint $table) {
-            $table->id();
-            $table->integer('prod_id');
-            $table->integer('compl_id');
-            $table->integer('status');
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            //
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -25,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prod_compl_maps');
+        Schema::table('products', function (Blueprint $table) {
+            //
+        });
     }
 };

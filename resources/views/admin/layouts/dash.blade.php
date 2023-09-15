@@ -146,7 +146,7 @@
               </li>
               <li><a href="#"><i class="icon-profile-male"></i> My Profile</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+              <li style="text-align: center"><form method="POST" action="{{ route('admin.logout')}}">@csrf<button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-power-off"></i> Logout</button></form></li>
             </ul>
           </li>
         </ul>

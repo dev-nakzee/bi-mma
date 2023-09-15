@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('serv_compl_maps', function (Blueprint $table) {
             $table->id();
+            $table->integer('serv_id');
+            $table->integer('compl_id');
+            $table->integer('status');
             $table->timestamps();
         });
     }

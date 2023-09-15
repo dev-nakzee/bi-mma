@@ -13,6 +13,8 @@ class ServicesController extends Controller
     public function index()
     {
         //
+        $services = Services::all();
+        return view('admin.service.index', compact('services'));
     }
 
     /**

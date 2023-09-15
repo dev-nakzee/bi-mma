@@ -13,6 +13,8 @@ class BlogCategoryController extends Controller
     public function index()
     {
         //
+        $blogCategories = BlogCategory::all();
+        return view('admin.blogs.categories.index', compact('blogCategories'));
     }
 
     /**

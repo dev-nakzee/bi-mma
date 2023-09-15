@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Media;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 
-class MediaController extends Controller
+class NoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function imgIndex()
+    public function index()
     {
         //
-        $media = Media::all();
-        return view('admin.media.images.index', compact('media'));
+        $notices = Notice::all();
+        return view('admin.notices.index', compact('notices'));
     }
 
     /**
@@ -36,7 +36,7 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Media $media)
+    public function show(Notice $notice)
     {
         //
     }
@@ -44,7 +44,7 @@ class MediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Media $media)
+    public function edit(Notice $notice)
     {
         //
     }
@@ -52,7 +52,7 @@ class MediaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Media $media)
+    public function update(Request $request, Notice $notice)
     {
         //
     }
@@ -60,7 +60,7 @@ class MediaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Media $media)
+    public function destroy(Notice $notice)
     {
         //
     }
