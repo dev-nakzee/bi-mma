@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blogs;
+use App\Models\ProdComplMap;
 use Illuminate\Http\Request;
 
-class BlogsController extends Controller
+class ProdComplMapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class BlogsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blogs $blogs)
+    public function show(ProdComplMap $prodComplMap)
     {
         //
     }
@@ -42,7 +42,7 @@ class BlogsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blogs $blogs)
+    public function edit(ProdComplMap $prodComplMap)
     {
         //
     }
@@ -50,7 +50,7 @@ class BlogsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blogs $blogs)
+    public function update(Request $request, ProdComplMap $prodComplMap)
     {
         //
     }
@@ -58,7 +58,7 @@ class BlogsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blogs $blogs)
+    public function destroy(ProdComplMap $prodComplMap)
     {
         //
     }

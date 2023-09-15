@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->string('news_name')->unique();
+            $table->text('news')->nullable();
+            $table->string('news_image')->nullable();
+            $table->string('news_alt')->nullable();
+            $table->string('news_url')->nullable();
+            $table->text('news_description')->nullable();
+            $table->string('news_titles')->nullable();
+            $table->text('news_keywords')->nullable();
+            $table->text('news_tags')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

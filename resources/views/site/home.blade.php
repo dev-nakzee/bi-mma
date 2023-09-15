@@ -25,7 +25,7 @@
             </li>
         </ul>
     </div>
-    <div class="section-2 text-center p-5 my-3 bg-grey-light text-dark">
+    <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
         <h1>Prominent Product Approvals<br>For Indian Market</h1>
         <div class="container-fluid row py-5 service-links">
             <div class="col-md-3 p-3">
@@ -77,6 +77,8 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="section-3">
     </div>
 @endsection
 @section('styles')
