@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary btn-sm" href="{{ route('customize.pages.new')}}">New Service</a></div>
+                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary btn-sm" href="{{ route('services.create')}}">New Service</a></div>
                 <div class="d-flex flex-column">
                     <table id="datatable" class="table table-bordered table-hover table-sm">
                         <thead>
@@ -17,22 +17,6 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($services as $service)
-                                <tr>
-                                    <td>{{ $service->id }}</td>
-                                    <td>{{ $service->service }}</td>
-                                    <td>{{ $service->meta_description }}</td>
-                                    <td>{{ $service->status }}</td>
-                                    <td class="row">
-                                        <div class="mr-1"><a href="{{ route('customize.pages.edit', $service->id) }}" class="btn btn-primary btn-sm"><i class="fa-light fa-edit"></i></a></div>
-                                        <form action="{{ route('customize.pages.destroy', $service->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-light fa-trash-can"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
                         </tbody>
                     </table>
                 </div>

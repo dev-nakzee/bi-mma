@@ -14,18 +14,20 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('service')->unique();
+            $table->string('slug');
+            $table->integer('media_id')->nullable();
+            $table->string('img_alt')->nullable();
             $table->text('description')->nullable();
-            $table->text('mandatory')->nullable();
+            $table->text('about')->nullable();
             $table->text('documents')->nullable();
             $table->text('stdcosttime')->nullable();
             $table->text('process')->nullable();
+            $table->string('seotitle')->nullable();
+            $table->text('seodescription')->nullable();
+            $table->text('seokeywords')->nullable();
+            $table->text('seometa')->nullable();
             $table->text('faq')->nullable();
             $table->boolean('status')->default(true);
-            $table->integer('tumb_id')->nullable();
-            $table->string('tumb_alt')->nullable();
-            $table->string('img_id')->nullable();
-            $table->string('img_alt')->nullable();
-            $table->text('list_guide')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

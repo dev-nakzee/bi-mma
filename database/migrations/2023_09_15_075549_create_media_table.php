@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('media');
-            $table->string('alt');
+            $table->text('path');
+            $table->string('type');
+            $table->string('size');
             $table->timestamps();
         });
     }
