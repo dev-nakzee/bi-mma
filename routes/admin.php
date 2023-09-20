@@ -17,8 +17,12 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/services', 'index')->name('services.index');
         Route::get('/services/new', 'create')->name('services.create');
         Route::post('/services/save', 'store')->name('services.save');
+        Route::get('/services/show/dataTable', 'show')->name('services.table');
+        Route::get('/services/edit/{id}', 'edit')->name('services.edit');
+        Route::post('/services/update','update')->name('services.update');
+        Route::post('/services/delete','destroy')->name('services.remove');
+
     });
-    Route::get('/services/all', [ServicesController::class, 'index'])->name('services.index');
 
     Route::get('/products/all', [ProductsController::class, 'index'])->name('products.index');
 
@@ -27,6 +31,16 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
     Route::get('/blogs/all', [BlogController::class, 'index'])->name('blogs.index');
 
     Route::get('/blogs/category/all', [BlogCategoryController::class, 'index'])->name('blogs.category.index');
+
+    Route::controller(CategoriesController::class)->group(function(){
+        Route::get('/categories/all', 'index')->name('category.index');
+        Route::get('/categories/show/dataTable', 'show')->name('category.table');
+        Route::get('/categories/new', 'create')->name('category.create');
+        Route::post('/categories/save', 'store')->name('category.save');
+        Route::get('/categories/edit/{id?}', 'edit')->name('category.edit');
+        Route::post('/categories/update', 'update')->name('category.update');
+        Route::get('/categories/delete/{id?}', 'destroy')->name('category.remove');
+    });
 
     Route::controller(MediaController::class)->group(function(){
         Route::get('/media/all', 'index')->name('media.index');

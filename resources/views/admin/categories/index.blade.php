@@ -4,31 +4,34 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary btn-sm" href="{{ route('customize.pages.new')}}">New category</a></div>
+                <div class="d-flex row mb-1">
+                    <div class="col-md-8">
+                    @if(session('messages'))
+                        @foreach(session('messages') as $message)
+                            <div class="alert alert-success">
+                                {{ $message }}
+                            </div>
+                        @endforeach
+                    @endif
+                    </div>
+                    <div class="d-flex justify-content-end col-md-4">
+                        <a class="btn btn-primary btn-sm" href="{{ route('category.create')}}">New category</a>
+                    </div>
+                </div>
+                
                 <div class="d-flex flex-column">
-                    <table id="datatable" class="table table-bordered table-hover table-sm">
+                    <table id="categoryDatatable" class="table table-bordered table-hover table-sm">
                         <thead>
                           <tr>
                             <th>ID</th>
                             <th>Category</th>
+                            <th>Description</th>
+                            <th>Tags</th>
                             <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
-                                <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->category }}</td>
-                                    <td class="row">
-                                        <div class="mr-1"><a href="{{ route('customize.pages.edit', $category->id) }}" class="btn btn-primary btn-sm"><i class="fa-light fa-edit"></i></a></div>
-                                        <form action="{{ route('customize.pages.destroy', $category->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-light fa-trash-can"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
@@ -45,9 +48,24 @@
     <!-- form wizard --> 
     <script>
         $(document).ready(function() {
-            var table = $('#datatable').DataTable({
-                paging: true,
-            });
+            loadDataTable();
         });
+        function loadDataTable() {
+            var table = $('#categoryDatatable').DataTable({
+                paging: true,
+                retrieve: true,
+                processing: true,
+                serverSide: true,
+                responsive: true,
+                ajax: "{{ route('category.table') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'category', name: 'category'},
+                    {data: 'description', name: 'description'},
+                    {data: 'tags', name: 'tags'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
+                ]
+            });
+        }
     </script>
 @endsection

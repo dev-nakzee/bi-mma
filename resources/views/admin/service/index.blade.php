@@ -6,10 +6,10 @@
             <div class="card-body">
                 <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary btn-sm" href="{{ route('services.create')}}">New Service</a></div>
                 <div class="d-flex flex-column">
-                    <table id="datatable" class="table table-bordered table-hover table-sm">
+                    <table id="serviceDataTable" class="table table-bordered table-hover table-sm">
                         <thead>
                           <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>Services</th>
                             <th>Description</th>
                             <th>Status</th>
@@ -33,9 +33,42 @@
     <!-- form wizard --> 
     <script>
         $(document).ready(function() {
-            var table = $('#datatable').DataTable({
-                paging: true,
-            });
+            loadDataTable()
         });
+        function loadDataTable() {
+            var table = $('#serviceDataTable').DataTable({
+                paging: true,
+                retrieve: true,
+                processing: true,
+                serverSide: true,
+                responsive: true,
+                ajax: "{{ route('services.table') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'service', name: 'service'},
+                    {data: 'description', name: 'description'},
+                    {data: 'status', name: 'status'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
+                ]
+            });
+        }
+        function delService(id) {
+            if(confirm('Are you sure you want to delete?') == true) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('services.remove') }}",
+                    data: {'id': id},
+                    dataType: 'JSON',
+                    success: function(response) {
+                        $('#serviceDataTable').DataTable().ajax.reload();
+                    }
+                });
+            }
+        }
     </script>
 @endsection
