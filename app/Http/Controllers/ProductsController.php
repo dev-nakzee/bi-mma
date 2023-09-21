@@ -69,16 +69,17 @@ class ProductsController extends Controller
                     $services = DB::table('services')
                     ->select('service')
                     ->distinct('id')
-                    ->whereIn('id',$serv)
+                    ->whereIn('id', $serv)
                     ->get();
-                    $serviceData = '';
+                    $data = '';
                     foreach($services as $service){
-                        $serviceData.= $serviceData.','.$service->service;
+                        $data = $data.'<span class="badge badge-secondary mr-1">'.$service->service.'</span>';
                     }
-                    return $serv;
+                    return $data;
                 })
                 ->addColumn('compliances', function($row){
                     $compl = explode(',', $row->compl);
+                    $compl = array_unique($compl);
                     $compliance = DB::table('compliances')
                     ->select('name')
                     ->whereIn('id',$compl)
