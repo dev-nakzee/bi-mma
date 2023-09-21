@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('prod_serv_maps', function (Blueprint $table) {
             $table->id();
-            $table->integer('prod_id');
-            $table->integer('serv_id');
-            $table->integer('status');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('service_id');
+            $table->boolean('status');
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 

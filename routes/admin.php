@@ -23,8 +23,17 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::post('/services/delete','destroy')->name('services.remove');
 
     });
+    // products routes
+    Route::controller(ProductsController::class)->group(function(){
+        Route::get('/products/all', 'index')->name('products.index');
+        Route::get('/products/new', 'create')->name('products.create');
+        Route::post('/products/save', 'store')->name('products.save');
+        Route::get('/products/show/dataTable', 'show')->name('products.table');
+        Route::get('/products/edit/{id}', 'edit')->name('products.edit');
+        Route::post('/products/update','update')->name('products.update');
+        Route::post('/products/delete','destroy')->name('products.remove');
 
-    Route::get('/products/all', [ProductsController::class, 'index'])->name('products.index');
+    });
 
     Route::get('/products/category/all', [CategoriesController::class, 'index'])->name('category.index');
 
@@ -58,9 +67,8 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/customize/pages/delete/{{$id}}', 'destroy')->name('customize.pages.destroy');
     });
     
-
-
-    Route::get('/customize/menu', [MenuController::class, 'index'])->name('customize.menu.index');
-
+    Route::controller(MenuController::class)->group(function(){
+        Route::get('/customize/menus', 'index')->name('customize.menu.index');
+    });
 
 });
