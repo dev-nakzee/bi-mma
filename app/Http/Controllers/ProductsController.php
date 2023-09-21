@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use App\Models\Services;
-use App\Models\compliances;
+use App\Models\Compliances;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
@@ -47,7 +47,7 @@ class ProductsController extends Controller
     {
         //
         if($request->ajax()){
-            $data = Products::selectRaw('product, category,
+            $data = Products::selectRaw('products.id as id, product, category,
         group_concat(prod_serv_maps.service_id) as serv,
         group_concat(prod_compl_maps.compliance_id) as compl')
             ->join('categories','products.category_id','categories.id')
@@ -65,15 +65,29 @@ class ProductsController extends Controller
                 })
                 ->addColumn('services', function($row){
                     $serv = explode(',', $row->serv);
+                    $serv = array_unique($serv);
                     $services = DB::table('services')
-                    ->selectRaw('group_concat(service) as service')
+                    ->select('service')
+                    ->distinct('id')
                     ->whereIn('id',$serv)
-                    ->groupBy('status')
                     ->get();
-                    return print_r($services);
+                    $serviceData = '';
+                    foreach($services as $service){
+                        $serviceData.= $serviceData.','.$service->service;
+                    }
+                    return $serv;
                 })
                 ->addColumn('compliances', function($row){
-                    return $row->compl;
+                    $compl = explode(',', $row->compl);
+                    $compliance = DB::table('compliances')
+                    ->select('name')
+                    ->whereIn('id',$compl)
+                    ->get();
+                    $data = '';
+                    foreach($compliance as $compliance) {
+                        $data = $data.'<span class="badge badge-primary mr-1">'.$compliance->name.'</span>';
+                    }
+                    return $data;
                 })
                 ->addColumn('tags', function($row){
                     return $row->tags;
