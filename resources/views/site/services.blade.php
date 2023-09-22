@@ -75,7 +75,7 @@
                     <div>
                     </div>
                 </div>
-                <div class="notification-section" id="notificationSection">
+                <div class="faq-section" id="faqSection">
                     <h4>
                         <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
                             FAQ
