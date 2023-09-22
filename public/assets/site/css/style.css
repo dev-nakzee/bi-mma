@@ -84,6 +84,23 @@
 	font-size: 22px !important;
 }
 
+.service-info-container {
+	max-height: 480px !important;
+	overflow-y: scroll;
+}
+.service-info-container::-webkit-scrollbar {
+	width: 5px;               /* width of the entire scrollbar */
+}
+  
+.service-info-container::-webkit-scrollbar-track {
+	background: transparent;        /* color of the tracking area */
+}
+  
+.service-info-container::-webkit-scrollbar-thumb {
+	background-color: #fd7e14;    /* color of the scroll thumb */
+}
+
+
 @media all and (min-width: 992px) {
 	.dropdown-menu {
 		width: 13rem;
