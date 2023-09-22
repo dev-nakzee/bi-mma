@@ -171,6 +171,7 @@
         $('#seoTitle').on('keyup', function(){
             var seotitle = $('#seoTitle').val();
             var pxl = Math.round(displayTextWidth(seotitle, "20pt arial, san-serif"));
+            pxl = pxl - (pxl * (10/100));
             var char = seotitle.length;
             $('#pxl').text(pxl);
             $('#char').text(char);
