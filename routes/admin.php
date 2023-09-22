@@ -21,7 +21,6 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/services/edit/{id}', 'edit')->name('services.edit');
         Route::post('/services/update','update')->name('services.update');
         Route::post('/services/delete','destroy')->name('services.remove');
-
     });
     // products routes
     Route::controller(ProductsController::class)->group(function(){

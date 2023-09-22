@@ -9,6 +9,8 @@ use App\Models\SubModules;
 use App\Models\Menu;
 use App\Models\SubMenu;
 use App\Models\Pages;
+use App\Models\Services;
+use App\Models\Media;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,7 +37,8 @@ class AppServiceProvider extends ServiceProvider
             $menu = Menu::get();
             $submenu = SubMenu::get();
             $pages = Pages::get();
-            $view->with(['menu' => $menu, 'submenu' => $submenu, 'pages' => $pages]);
+            $services = Services::select('services.id as id','services.service as service', 'services.slug as slug', 'media.path as path')->join('media', 'services.media_id','media.id')->get();
+            $view->with(['menu' => $menu, 'submenu' => $submenu, 'pages' => $pages, 'services' => $services]);
         });
     }
 }

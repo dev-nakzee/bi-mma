@@ -51,9 +51,21 @@
                       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                       <!-- Mega Menu -->
                       <div class="dropdown-menu mega-menu p-3">
-                          <span>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                          </span>
+                          <div class="container-fluid row">
+                            @if($services)
+                            @foreach($services as $service)
+                            <div class="col-md-3">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{ $service->service }}</h5>
+                                  <img src="{{ url($service->path)}}">
+                                  <a href="" class="btn btn-primary">Read More</a>
+                                </div>
+                              </div>
+                            </div>
+                            @endforeach
+                            @endif
+                          </div>
                       </div>
                     </li>
                     
@@ -61,8 +73,32 @@
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
-                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></a>
-                <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
+                <div class="btn-group">
+                  <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end" type="button" id="navbarRegisterBtn" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="inside" aria-expanded="false">
+                    <i class="fa fa-user-plus"></i> <span class="">Register</span>
+                  </button>
+                  <form class="dropdown-menu dropdown-menu-start p-4" aria-labelledby="navbarRegisterBtn">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                          Remember me
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+                {{-- <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> Register</a>                
+                <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a> --}}
               </div>
           </div>
       </nav>
