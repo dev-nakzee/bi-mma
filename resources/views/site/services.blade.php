@@ -1,8 +1,12 @@
+@if($services)
 @extends('site.layouts.main', ['title' => 'All Pages', 'module' => "Pages"])
+@section('seo')
+<title>{{ $services->seotitle }}</title>
+<meta name="description" content="{{ $services->seodescription}}" />
+<meta name="keywords" content="{{$services->seokeywords}}" />
+@endsection
 @section('content')
-    @if($services)
-    @php
-    @endphp
+
     <div class="container-fuild p-5 row">
         <div class="col-md-12">
             <h2>{{$services->service}}</h2>
@@ -101,12 +105,11 @@
             </div>
         </div>
     </div>
-    @endif
 @endsection
 @section('styles')
-
 
 @endsection
 @section('scripts')
 
 @endsection
+@endif
