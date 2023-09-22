@@ -59,7 +59,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">{{ $service->service }}</h5>
                                   <img src="{{ url($service->path)}}">
-                                  <a href="" class="btn btn-primary">Read More</a>
+                                  <a href="{{ url('/services'.'/'.$service->slug)}}" class="btn btn-primary">Read More</a>
                                 </div>
                               </div>
                             </div>
