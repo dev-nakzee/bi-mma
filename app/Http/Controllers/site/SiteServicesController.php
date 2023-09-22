@@ -11,7 +11,7 @@ class SiteServicesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($slug)
+    public function index($slug, $link)
     {
         //
         $services = Services::join('media', 'services.media_id','media.id')->where('slug', $slug)->first();

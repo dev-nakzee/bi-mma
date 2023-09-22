@@ -2,8 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     @yield('seo')
+    <meta content="index, follow" name="robots"/>
+    <meta name="author" content="Rajesh Kumar">
+    <meta name="publisher" content="MakeMyApproval"/>
+    
+    <meta name="Classification" content="Business">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    
+    <meta property="og:site_name" content="MakeMyApproval" />
+
+    <meta property="fb:page_id" content="1590316941238982"/>
+    <meta property="og:author" content="MakeMyApproval" />
+    <meta property="og:image" content="{{ asset('assets/site/images/logomma.png')}}" alt = "MakeMyApproval" />
+    <meta property="og:street-address" content="110, Sharma Complex A-2, Guru Nanak Pura">
+    <meta property="og:locality" content="Laxmi Nagar">
+    <meta property="og:region" content="Delhi">
+    <meta property="og:postal-code" content="110092">
+    <meta property="og:country-name" content="India">
+    <meta property="og:email" content="info@bl-india.com">
+    <meta property="og:phonenumber" content="+91-8130615678">
+    <meta property="og:brand" content="MakeMyApproval">
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:image" content="{{ asset('assets/site/images/logomma.png')}}" />
+
+    <meta name="twitter:site" content="@Brand_Liaison" />
+
     <link href="{{ asset('assets/site/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('assets/admin/css/fontawesome/css/all.css')}}" rel="stylesheet">
     @yield('styles')

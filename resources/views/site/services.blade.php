@@ -4,6 +4,16 @@
 <title>{{ $services->seotitle }}</title>
 <meta name="description" content="{{ $services->seodescription}}" />
 <meta name="keywords" content="{{$services->seokeywords}}" />
+
+<meta property="og:title" content="{{ $services->seotitle }}"/>
+<meta property="og:description" content="{{ $services->seodescription}}"/>
+
+<meta property="og:url" content="https://www.bl-india.com/holiday-list.php" />
+
+<meta name="twitter:title" content="{{ $services->seotitle }}" />
+<meta name="twitter:description" content="{{ $services->seodescription}}" />
+
+<meta name="twitter:url" content="https://www.bl-india.com/holiday-list.php" />
 @endsection
 @section('content')
 
@@ -21,14 +31,14 @@
         <div class="col-md-12 row">
             <div class="col-md-3">
                 <div id="list-example" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#aboutSection">About Service</a>
-                    <a class="list-group-item list-group-item-action" href="#mandatoryListSection">Mandatory Product List</a>
-                    <a class="list-group-item list-group-item-action" href="#documentsSection">Required Documents</a>
-                    <a class="list-group-item list-group-item-action" href="#costingTimelineSection">Standard Costing and Timeline</a>
-                    <a class="list-group-item list-group-item-action" href="#processSection">Registration Process</a>
-                    <a class="list-group-item list-group-item-action" href="#guidelineSection">Download Info & Guideline</a>
-                    <a class="list-group-item list-group-item-action" href="#notificationSection">Industry Notification</a>
-                    <a class="list-group-item list-group-item-action" href="#faqSection">FAQ</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#aboutSection">About Service</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#mandatoryListSection">Mandatory Product List</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#documentsSection">Required Documents</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#costingTimelineSection">Standard Costing and Timeline</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#processSection">Registration Process</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#guidelineSection">Download Info & Guideline</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#notificationSection">Industry Notification</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#faqSection">FAQ</a>
                 </div>
             </div>
             <div class="col-md-9 service-info-container" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0"">
@@ -110,6 +120,22 @@
 
 @endsection
 @section('scripts')
-
+<script>
+    $('.action-url').on('click', function(e) {
+        var href = $(this).attr('href');
+        var link = $(this).html();
+        var slug = '{{ $services->slug }}';
+        link = link.toLowerCase();
+        link = link.replaceAll(' ', '-');
+        title = '{{ $services->seotitle }}';
+        var newUrl = '/services/'+slug+'/'+link;
+        if(link === 'about-service') {
+            var newUrl = '/services/'+slug;
+        }
+        history.pushState({}, title, newUrl);
+        //window.history.pushState(href, title, '/'+slug);
+        //window.history.replaceState(slug, title, slug);
+    });
+</script>
 @endsection
 @endif
