@@ -56,3 +56,7 @@
   border-color: #ef1c1c;
   color: #ef1c1c
 }
+.richtexteditor {
+  max-height: 360px !important;
+  overflow-y: scroll;
+}
