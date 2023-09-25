@@ -133,8 +133,7 @@
             var newUrl = '/services/'+slug;
         }
         history.pushState({}, title, newUrl);
-        //window.history.pushState(href, title, '/'+slug);
-        //window.history.replaceState(slug, title, slug);
+
     });
 </script>
 @endsection
