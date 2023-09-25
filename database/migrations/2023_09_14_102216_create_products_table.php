@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->text('documents')->nullable();
             $table->text('process')->nullable();
-            $table->text('choose-us')->nullable();
+            $table->text('choose_us')->nullable();
             $table->unsignedBigInteger('info_list')->nullable();
             $table->unsignedBigInteger('guidelines')->nullable();
             $table->text('tags')->nullable();
