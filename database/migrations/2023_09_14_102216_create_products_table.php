@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('product')->unique();
             $table->unsignedBigInteger('category_id');
-            $table->text('remarks')->nullable();
             $table->text('description')->nullable();
+            $table->text('about')->nullable();
+            $table->text('documents')->nullable();
+            $table->text('process')->nullable();
+            $table->text('choose-us')->nullable();
             $table->unsignedBigInteger('info_list')->nullable();
             $table->unsignedBigInteger('guidelines')->nullable();
             $table->text('tags')->nullable();
