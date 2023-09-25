@@ -7,10 +7,10 @@
 }
 body {
 	overflow-x: hidden;
-	-webkit-transition:all 3s ease !important;
-	-moz-transition:all 3s ease !important;
-	-o-transition:all 3s ease !important;
-	transition:all 3s ease !important;
+	-webkit-transition:all 0.8s ease !important;
+	-moz-transition:all 0.8s ease !important;
+	-o-transition:all 0.8s ease !important;
+	transition:all 0.8s ease !important;
 }
 .top-bar a {
 	text-decoration: none;
@@ -43,9 +43,6 @@ body {
 	color: #000;
 }
 
-.service-nav {
-
-}
 .service-nav a img{
 	width:  70px;
     height: 70px;
@@ -94,18 +91,17 @@ body {
 .services-pages {
 	overflow-x: hidden;
 }
-.sidebar-services {
-	
-}
 
 .sidebar-fixed {
 	 position: fixed;
 	 top: 100px;
+	 z-index: 1040 !important;
 }
 .footer {
 	background: #007bff;
 	color: #fff !important;
-	
+	z-index: 1090 !important;
+	position: relative;
 }
 .footer h5 {
 	font-style: normal;

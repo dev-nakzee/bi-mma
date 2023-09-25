@@ -31,7 +31,7 @@
             </nav>
         </div>
         <div class="col-md-12 row px-5 pt-3">
-            <div class="col-md-3 bg-white border-rounded" id="sidebar-services">
+            <div class="col-md-3 bg-white border-rounded z-index-0" id="sidebar-services">
                 <img class="img-fluid img-thumbnail mx-auto d-block" src="{{ $services->path }}">
                 <span class="text-center"> {{ $services->service }}</span>
                 <div id="service-details" class="list-group">
