@@ -92,11 +92,6 @@ body {
 	overflow-x: hidden;
 }
 
-.sidebar-fixed {
-	 position: fixed;
-	 top: 100px;
-	 z-index: 1040 !important;
-}
 .footer {
 	background: #007bff;
 	color: #fff !important;
@@ -118,8 +113,8 @@ body {
 }
 
 .service-info-container {
-	min-height: 480px !important;
-	float: right !important;
+	max-height: 480px !important;
+	overflow-y: scroll;
 }
 .service-info-container::-webkit-scrollbar {
 	width: 5px;               /* width of the entire scrollbar */

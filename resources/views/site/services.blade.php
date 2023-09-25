@@ -19,7 +19,8 @@
 @section('content')
     <div class="container-fuild py-5 row services-pages">
         <div class="col-md-6 px-5 align-middle">
-            <h2>{{$services->service}}</h2>
+            <img class="img-fluid img-thumbnail mx-auto d-inline" src="{{ $services->path }}">
+            <h2 class="d-inline-block">{{$services->service}}</h2>
         </div>
         <div class="col-md-6 px-5 align-middle">
             <nav aria-label="breadcrumb" class="text-end">
@@ -31,9 +32,8 @@
             </nav>
         </div>
         <div class="col-md-12 row px-5 pt-3">
-            <div class="col-md-3 bg-white border-rounded z-index-0" id="sidebar-services">
-                <img class="img-fluid img-thumbnail mx-auto d-block" src="{{ $services->path }}">
-                <span class="text-center"> {{ $services->service }}</span>
+            <div class="col-md-3 bg-white border-rounded" id="sidebar-services">
+                <p class="text-center fs-4"> {{ $services->service }}</p>
                 <div id="service-details" class="list-group">
                     <a class="list-group-item list-group-item-action action-url" href="#about-service">About Service</a>
                     <a class="list-group-item list-group-item-action action-url" href="#mandatory-product-list">Mandatory Product List</a>
@@ -45,7 +45,6 @@
                     <a class="list-group-item list-group-item-action action-url" href="#faqs">FAQ</a>
                 </div>
             </div>
-            <div class="col-md-3 d-none" id="sidebar-cover"></div>
             <div class="col-md-9 ps-5 service-info-container float-right" data-bs-spy="scroll" data-bs-target="#service-details" data-bs-smooth-scroll="true" tabindex="0">
                 <div class="about-section" id="about-service">
                     <div>
