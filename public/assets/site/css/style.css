@@ -6,6 +6,9 @@
 	box-sizing: border-box;
 
 }
+body {
+	overflow-x: hidden;
+}
 .top-bar a {
 	text-decoration: none;
 	font-size: small;
@@ -28,6 +31,16 @@
 }
 .nav-link {
     color: #fff !important;
+}
+.service-nav {
+
+}
+.service-nav a img{
+	width:  70px;
+    height: 70px;
+    object-fit: cover;
+	margin-bottom: 14px;
+	background-color: transparent;
 }
 .service-links a {
 	display: block;
@@ -65,6 +78,10 @@
     background: #fff;
     padding: 0.5em;
     box-shadow: 2px 2px 20px #4e4e4e;
+}
+
+.services-pages {
+	overflow-x: hidden;
 }
 
 .footer {

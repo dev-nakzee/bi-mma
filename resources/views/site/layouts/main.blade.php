@@ -83,10 +83,10 @@
                       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                       <!-- Mega Menu -->
                       <div class="dropdown-menu mega-menu p-3">
-                          <div class="container-fluid row px-5 service-nav">
+                          <div class="container-fluid row px-5">
                             @if($services)
                             @foreach($services as $service)
-                            <div class="col-md-3">
+                            <div class="col-md-3 service-nav">
                               <a href="{{ url('/services'.'/'.$service->slug)}}" class="card">
                                 <div class="card-body">
                                   <img src="{{ url($service->path)}}">

@@ -14,10 +14,10 @@
 <meta name="twitter:description" content="{{ $services->seodescription}}" />
 
 <meta name="twitter:url" content="https://www.bl-india.com/holiday-list.php" /> --}}
+
 @endsection
 @section('content')
-
-    <div class="container-fuild p-5 row">
+    <div class="container-fuild p-5 row services-pages">
         <div class="col-md-12">
             <h2>{{$services->service}}</h2>
             <nav aria-label="breadcrumb">
@@ -117,7 +117,9 @@
     </div>
 @endsection
 @section('styles')
+<style> 
 
+</style>
 @endsection
 @section('scripts')
 <script>
