@@ -4,10 +4,13 @@
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
 	box-sizing: border-box;
-
 }
 body {
 	overflow-x: hidden;
+	-webkit-transition:all 3s ease !important;
+	-moz-transition:all 3s ease !important;
+	-o-transition:all 3s ease !important;
+	transition:all 3s ease !important;
 }
 .top-bar a {
 	text-decoration: none;
@@ -15,6 +18,9 @@ body {
 }
 .site-logo {
 	height: 70px;
+}
+.site-logo-sticky {
+	height: 50px;
 }
 .header-img {
 	height: 70px;
@@ -32,6 +38,11 @@ body {
 .nav-link {
     color: #fff !important;
 }
+.breadcrumb-link {
+	text-decoration: none;
+	color: #000;
+}
+
 .service-nav {
 
 }
@@ -83,7 +94,14 @@ body {
 .services-pages {
 	overflow-x: hidden;
 }
+.sidebar-services {
+	
+}
 
+.sidebar-fixed {
+	 position: fixed;
+	 top: 100px;
+}
 .footer {
 	background: #007bff;
 	color: #fff !important;
@@ -104,8 +122,8 @@ body {
 }
 
 .service-info-container {
-	max-height: 480px !important;
-	overflow-y: scroll;
+	min-height: 480px !important;
+	float: right !important;
 }
 .service-info-container::-webkit-scrollbar {
 	width: 5px;               /* width of the entire scrollbar */
