@@ -5,7 +5,7 @@
 <meta name="description" content="{{ $services->seodescription}}" />
 <meta name="keywords" content="{{$services->seokeywords}}" />
 
-<meta property="og:title" content="{{ $services->seotitle }}"/>
+{{-- <meta property="og:title" content="{{ $services->seotitle }}"/>
 <meta property="og:description" content="{{ $services->seodescription}}"/>
 
 <meta property="og:url" content="https://www.bl-india.com/holiday-list.php" />
@@ -13,7 +13,7 @@
 <meta name="twitter:title" content="{{ $services->seotitle }}" />
 <meta name="twitter:description" content="{{ $services->seodescription}}" />
 
-<meta name="twitter:url" content="https://www.bl-india.com/holiday-list.php" />
+<meta name="twitter:url" content="https://www.bl-india.com/holiday-list.php" /> --}}
 @endsection
 @section('content')
 

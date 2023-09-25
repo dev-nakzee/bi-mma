@@ -8,7 +8,7 @@
     <meta name="author" content="Rajesh Kumar">
     <meta name="publisher" content="MakeMyApproval"/>
     
-    <meta name="Classification" content="Business">
+    {{-- <meta name="Classification" content="Business">
     <meta name="coverage" content="Worldwide">
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
@@ -34,7 +34,7 @@
     
     <meta name="twitter:image" content="{{ asset('assets/site/images/logomma.png')}}" />
 
-    <meta name="twitter:site" content="@Brand_Liaison" />
+    <meta name="twitter:site" content="@Brand_Liaison" /> --}}
 
     <link href="{{ asset('assets/site/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('assets/admin/css/fontawesome/css/all.css')}}" rel="stylesheet">
@@ -83,24 +83,22 @@
                       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                       <!-- Mega Menu -->
                       <div class="dropdown-menu mega-menu p-3">
-                          <div class="container-fluid row">
+                          <div class="container-fluid row px-5 service-nav">
                             @if($services)
                             @foreach($services as $service)
                             <div class="col-md-3">
-                              <div class="card">
+                              <a href="{{ url('/services'.'/'.$service->slug)}}" class="card">
                                 <div class="card-body">
-                                  <h5 class="card-title">{{ $service->service }}</h5>
                                   <img src="{{ url($service->path)}}">
-                                  <a href="{{ url('/services'.'/'.$service->slug)}}" class="btn btn-primary">Read More</a>
+                                  <h5 class="card-title">{{ $service->service }}</h5>
                                 </div>
-                              </div>
+                              </a>
                             </div>
                             @endforeach
                             @endif
                           </div>
                       </div>
                     </li>
-                    
                     <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
                 </ul>
               </div>
@@ -129,11 +127,12 @@
                     <button type="submit" class="btn btn-primary">Sign in</button>
                   </form>
                 </div>
-                {{-- <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> Register</a>                
-                <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a> --}}
+                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> Register</a>                 
+                <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
               </div>
           </div>
       </nav>
+
     <!-- Ends -->
 
     @yield('content')
