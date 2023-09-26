@@ -27,7 +27,7 @@ class MediaController extends Controller
     public function list(Request $request): JsonResponse
     {
         //
-        $media = Media::select('id','media','path')->orderBy('id', 'DESC')->get();
+        $media = Media::select('id','name','media','path')->orderBy('id', 'DESC')->get();
         return response()->json([$media]);
     }
 

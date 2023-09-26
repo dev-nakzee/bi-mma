@@ -56,7 +56,25 @@
   border-color: #ef1c1c;
   color: #ef1c1c
 }
-.richtexteditor {
+.editor-area div {
   max-height: 360px !important;
   overflow-y: scroll;
 }
+#gallery {
+  height: 300px;
+  overflow: scroll;
+  border: #939394 1px solid;
+}
+.gallery-btn {
+  background: none;
+  border: 1px solid #939394;
+  border-radius: 5px !important;
+  padding: 0;
+}
+.gallery-image {
+  height: 100px !important;
+  width: auto !important;
+}
+
+
+  

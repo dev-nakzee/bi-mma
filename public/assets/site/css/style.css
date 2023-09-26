@@ -113,11 +113,12 @@ body {
 }
 
 .service-info-container {
-	max-height: 480px !important;
+	max-height: 600px !important;
+	min-height: 500px;
 	overflow-y: scroll;
 }
 .service-info-container::-webkit-scrollbar {
-	width: 5px;               /* width of the entire scrollbar */
+	width: 1px;               /* width of the entire scrollbar */
 }
   
 .service-info-container::-webkit-scrollbar-track {

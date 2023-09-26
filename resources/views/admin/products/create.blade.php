@@ -26,67 +26,33 @@
                         <div class="form-group col-md-6">
                             <label for="page-slug">Product Image</label>
                             <div class="row">
-                                <select type="text" class="form-control col-11" id="image" name="image">
-                                </select>
+                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled>
+                                <input type="text" class="form-control col-11" id="image" name="image" disabled hidden>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Image Alt</label>
-                            <input type="text" class="form-control" id="page-slug" name="image_alt">
+                            <input type="text" class="form-control" id="alt" name="image_alt">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="page-slug">Category</label>
+                            <select class="form-control" id="category" name="category">
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="page-slug">Services</label>
+                            <select class="form-control" id="services" name="services"></select>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="page-short">Page Description</label>
+                            <label for="page-short">Description</label>
                             <textarea class="form-control" id="description" name="description"></textarea>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="col-md-12 editor-area d-block">
                             <label for="page-short">About product</label>
-                            <textarea id="about" name="about">
-                            </textarea>
-                        </div>
-                        
-                        <div class="form-group col-md-12">
-                            <label for="page-short">Required Documents</label>
-                            <textarea id="documentation" name="documentation">
-                    
-                            </textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="page-short">Standard Costing &amp Timeline</label>
-                            <textarea id="stdCostTime" name="stdCostTime">
-                       
-                            </textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="page-short">Registration Process</label>
-                            <textarea id="process" name="process">
-                            </textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="page-title">SEO Title</label>
-                            <input type="text" class="form-control" id="seoTitle" name="seoTitle">
-                            <p>Pixels: <span id="pxl"></span>(545px) | Character: <span id="char"></span>(190)</p>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="page-description">SEO Description</label>
-                            <textarea type="text" class="form-control" id="seoDescription" name="seoDescription"></textarea>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="page-keyword">Keywords</label>
-                            <textarea type="text" class="form-control" id="seoKeywords" name="seoKeywords"></textarea>
-                        </div>
-                        <div class="form-group col-md-12" id="faq">
-                            <label for="page-keyword">FAQ <button class="btn btn-primary btn-sm" id="addFaq"><i class="fa fa-plus"></i> Add</button></label>
-                            <div class="container col-md-12 row">
-                                <div class="col-md-6">
-                                    <label>Question</label>
-                                    <input type="text" class="form-control" name="question[0]">
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Answer</label>
-                                    <input type="text" class="form-control" name="answer[0]">
-                                </div>
-                            </div>
+                            <input type="text" name="about" hidden />
+                            <div id="about" class="col-12 d-flex"></div>
                         </div>
                     </div>
                 </form>
@@ -95,7 +61,7 @@
     </div>
 </div>
 <div class="modal fade" id="addMediaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addMediaModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addMediaModalLabel">Add media</h5>
@@ -106,41 +72,63 @@
             <div class="modal-body">
                 <form action="{{ route('media.upload.store') }}" method="POST" enctype="multipart/form-data" class="dropzone" id="file-upload">
                     @csrf
-                </form> 
+                </form>
+                <button class="btn btn-primary btn-sm mt-1 w-100" id="loadMedia">Load Media</button>
+                <div id="gallery" class="p-2 content-justify-center mt-2">
+
+                </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />  
 <!-- Include Dropzone.js CSS-->
 <link href="https://cdn.jsdelivr.net/npm/dropzone@5.9.2/dist/min/dropzone.min.css" rel="stylesheet">
+
+<!-- Core build with no theme, formatting, non-essential modules -->
+{{-- <link href="{{ asset('assets/admin/quill/themes/base.css') }}" rel="stylesheet">
+<!-- Theme included stylesheets -->
+<link href="{{ asset('assets/admin/quill/themes/snow.css') }}" rel="stylesheet"> --}}
+
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
 @endsection
 @section('scripts')
-<script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>  
-<script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>  
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+{{-- <script src="{{ asset('assets/admin/quill/quill.core.js')}}"></script> --}}
+
 <!-- Include Dropzone.js JS-->
 <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.2/dist/min/dropzone.min.js"></script> 
     <script>
         $(document).ready(function() {
-            var editorAbout = new RichTextEditor("#about");
-            var editor1Document = new RichTextEditor("#documentation");
-            var editor1Costing = new RichTextEditor("#stdCostTime");
-            var editor1Process = new RichTextEditor("#process");
+            var editorAbout = new Quill("#about", {
+                theme: 'snow'
+            });
+            var editor1Document = new Quill("#documents");
+            // var editor1Costing = new Quill("#stdCostTime");
+            // var editor1Process = new Quill("#process");
+            uploadMedia()
+        });
+        function uploadMedia(){
             Dropzone.options.fileUpload = {
                 maxFiles: 1,
                 paramName: "file", // Name of the input field (file upload)
                 maxFilesize: 2, // Max file size in MB
+                uploadMultiple: false,
                 acceptedFiles: ".jpg, .jpeg, .png, .pdf", // Allowed file types
             };
-            listMedia()
+        }
+        $('#loadMedia').on('click', function(){
+            listMedia();
         });
-        $('#addMediaModal').on('hidden.bs.modal', function () {
+        $(window).on('shown.bs.modal', function() { 
+            $('#addMediaModal').modal('show');
             listMedia();
         });
         function listMedia() {
-            $('#image').empty();
+            $('#gallery').empty();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -152,10 +140,16 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#image').append('<option value="'+key.id+'"><img style="width:20px;" src="http://localhost:8000'+key.path+'">'+key.media+'</option>');
+                        $('#gallery').append('<button type="button" class="btn lazy gallery-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
                     })
                 }
             });
+        }
+        function galleryBtn(imgid, img) {
+            $('#image').val(imgid);
+            $('#imgselect').val(img);
+            console.log(imgid+' img="'+img);
+            $('#addMediaModal').modal('hide');
         }
         function displayTextWidth(text, font) {
             let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));
