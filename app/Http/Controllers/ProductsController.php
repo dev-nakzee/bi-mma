@@ -38,6 +38,11 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'product' => ['required', 'unique:'.Products::class],
+            'slug' => ['required', 'unique:'.Products::class],
+            'image_alt' => ['required'],
+        ]);
     }
 
     /**

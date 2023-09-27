@@ -54,13 +54,18 @@
                             <textarea name="about" id="about" class="editor-area"></textarea>
                         </div>
                         <div class="form-group col-md-12 d-block">
-                            <label for="page-short">About product</label>
+                            <label for="page-short">Required Documents</label>
+                            <textarea name="documents" id="documents" class="editor-area"></textarea>
+                        </div>
+                        <div class="form-group col-md-12 d-block">
+                            <label for="page-short">Process</label>
                             <textarea name="about" id="about" class="editor-area"></textarea>
                         </div>
                         <div class="form-group col-md-12 d-block">
-                            <label for="page-short">About product</label>
-                            <textarea name="about" id="about" class="editor-area"></textarea>
+                            <label for="page-short">Why Choose Us</label>
+                            <textarea name="choose_us" id="choose_us" class="editor-area"></textarea>
                         </div>
+                        
                     </div>
                 </form>
             </div>
@@ -101,9 +106,8 @@
     <script>
         $(document).ready(function() {
             tinymce.init({
-                selector: '#about',
+                selector: 'textarea.editor-area',
                 plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
-                menubar: 'file edit view insert format tools table help',
                 toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
             });
             uploadMedia()
@@ -157,7 +161,7 @@
         }
         $('#product').on('keyup', function() {
             var product = $(this).val();
-            $('#slug').val(product.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, ''));
+            $('#slug').val(product.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, ''));
         });
         $('#seoTitle').on('keyup', function(){
             var seotitle = $('#seoTitle').val();

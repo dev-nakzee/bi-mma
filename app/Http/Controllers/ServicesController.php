@@ -38,6 +38,7 @@ class ServicesController extends Controller
         //
         $request->validate([
             'service' => ['required', 'unique:'.Services::class],
+            'slug' => ['required', 'unique:'.Services::class],
             'image_alt' => ['required'],
         ]);
         $faq = array_combine($request->question, $request->answer);        

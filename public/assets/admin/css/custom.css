@@ -78,6 +78,10 @@
 .tox-promotion {
   display: none;
 }
+label {
+  font-style: italic;
+  font-weight: 600;
+}
 
 
   
