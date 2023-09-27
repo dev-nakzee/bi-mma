@@ -49,10 +49,17 @@
                             <label for="page-short">Description</label>
                             <textarea class="form-control" id="description" name="description"></textarea>
                         </div>
-                        <div class="col-md-12 editor-area d-block">
+                        <div class="form-group col-md-12 d-block">
                             <label for="page-short">About product</label>
-                            <input type="text" name="about" hidden />
-                            <div id="about" class="col-12 d-flex"></div>
+                            <textarea name="about" id="about" class="editor-area"></textarea>
+                        </div>
+                        <div class="form-group col-md-12 d-block">
+                            <label for="page-short">About product</label>
+                            <textarea name="about" id="about" class="editor-area"></textarea>
+                        </div>
+                        <div class="form-group col-md-12 d-block">
+                            <label for="page-short">About product</label>
+                            <textarea name="about" id="about" class="editor-area"></textarea>
                         </div>
                     </div>
                 </form>
@@ -85,30 +92,20 @@
 @section('styles')
 <!-- Include Dropzone.js CSS-->
 <link href="https://cdn.jsdelivr.net/npm/dropzone@5.9.2/dist/min/dropzone.min.css" rel="stylesheet">
-
-<!-- Core build with no theme, formatting, non-essential modules -->
-{{-- <link href="{{ asset('assets/admin/quill/themes/base.css') }}" rel="stylesheet">
-<!-- Theme included stylesheets -->
-<link href="{{ asset('assets/admin/quill/themes/snow.css') }}" rel="stylesheet"> --}}
-
-<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
-
 @endsection
 @section('scripts')
-<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-{{-- <script src="{{ asset('assets/admin/quill/quill.core.js')}}"></script> --}}
+<script src="{{ asset('tinymce/tinymce.min.js')}}"></script>
 
 <!-- Include Dropzone.js JS-->
 <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.2/dist/min/dropzone.min.js"></script> 
     <script>
         $(document).ready(function() {
-            var editorAbout = new Quill("#about", {
-                theme: 'snow'
+            tinymce.init({
+                selector: '#about',
+                plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+                menubar: 'file edit view insert format tools table help',
+                toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
             });
-            var editor1Document = new Quill("#documents");
-            // var editor1Costing = new Quill("#stdCostTime");
-            // var editor1Process = new Quill("#process");
             uploadMedia()
         });
         function uploadMedia(){
