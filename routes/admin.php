@@ -35,11 +35,7 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
 
     });
 
-    Route::get('/products/category/all', [CategoriesController::class, 'index'])->name('category.index');
-
-    Route::get('/blogs/all', [BlogController::class, 'index'])->name('blogs.index');
-
-    Route::get('/blogs/category/all', [BlogCategoryController::class, 'index'])->name('blogs.category.index');
+   
 
     Route::controller(CategoriesController::class)->group(function(){
         Route::get('/categories/all', 'index')->name('category.index');
@@ -49,6 +45,29 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/categories/edit/{id?}', 'edit')->name('category.edit');
         Route::post('/categories/update', 'update')->name('category.update');
         Route::get('/categories/delete/{id?}', 'destroy')->name('category.remove');
+    });
+
+    Route::get('/blogs/all', [BlogController::class, 'index'])->name('blogs.index');
+
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/blogs/all', 'index')->name('blogs.index');
+        Route::get('/blogs/show/dataTable', 'show')->name('blogs.table');
+        Route::get('/blogs/new', 'create')->name('blogs.create');
+        Route::post('/blogs/save', 'store')->name('blogs.save');
+        Route::get('/blogs/edit/{id?}', 'edit')->name('blogs.edit');
+        Route::post('/blogs/update', 'update')->name('blogs.update');
+        Route::get('/blogs/delete/{id?}', 'destroy')->name('blogs.remove');
+    });
+
+    Route::controller(BlogCategoryController::class)->group(function(){
+        Route::get('/blog/categories/all', 'index')->name('blogs.category.index');
+        Route::get('/blog/categories/list', 'list')->name('blogs.category.list');
+        Route::get('/blog/categories/show/dataTable', 'show')->name('blogs.category.table');
+        Route::get('/blog/categories/new', 'create')->name('blogs.category.create');
+        Route::post('/blog/categories/save', 'store')->name('blogs.category.save');
+        Route::get('/blog/categories/edit/{id?}', 'edit')->name('blogs.category.edit');
+        Route::post('/blog/categories/update', 'update')->name('blogs.category.update');
+        Route::get('/blog/categories/delete/{id?}', 'destroy')->name('blogs.category.remove');
     });
 
     Route::controller(MediaController::class)->group(function(){
