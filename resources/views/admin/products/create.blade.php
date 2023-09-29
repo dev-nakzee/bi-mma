@@ -37,35 +37,55 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Category</label>
-                            <select class="form-control" id="category" name="category">
+                            <select class="form-control" id="category" name="category" multiple>
 
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Services</label>
-                            <select class="form-control" id="services" name="services"></select>
+                            <select class="form-control" id="services" name="services" multiple></select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="page-short">Standards</label>
+                            <input type="text" class="form-control" id="standards" name="standards">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="page-short">Description</label>
-                            <textarea class="form-control" id="description" name="description"></textarea>
+                            <textarea class="editor-area" id="description" name="description"></textarea>
                         </div>
                         <div class="form-group col-md-12 d-block">
                             <label for="page-short">About product</label>
                             <textarea name="about" id="about" class="editor-area"></textarea>
                         </div>
-                        <div class="form-group col-md-12 d-block">
-                            <label for="page-short">Required Documents</label>
-                            <textarea name="documents" id="documents" class="editor-area"></textarea>
+                        <div class="form-group col-md-12">
+                            <label for="page-short">Standards</label>
+                            <input type="text" class="form-control" id="standards" name="standards">
                         </div>
-                        <div class="form-group col-md-12 d-block">
-                            <label for="page-short">Process</label>
-                            <textarea name="about" id="about" class="editor-area"></textarea>
+                        <div class="form-group col-md-6">
+                            <label for="page-title">Information List</label>
+                            <input type="text" class="form-control col-11 d-inline" id="infoList" disabled>
+                            <input type="text" class="form-control col-11" name="infoList" disabled hidden>
+                            <a href="#" id="infoListBtn" class="btn btn-primary btn-sm col-1 d-inline" data-toggle="modal" data-target="#addDocsModal"><i class="fa fa-plus"></i></a>
                         </div>
-                        <div class="form-group col-md-12 d-block">
-                            <label for="page-short">Why Choose Us</label>
-                            <textarea name="choose_us" id="choose_us" class="editor-area"></textarea>
+                        <div class="form-group col-md-6">
+                            <label for="page-title">Guidelines</label>
+                            <input type="text" class="form-control col-11 d-inline" id="guidelines" disabled>
+                            <input type="text" class="form-control col-11" name="guidelines" disabled hidden>
+                            <a href="#" id="guidelinesBtn" class="btn btn-primary btn-sm col-1 d-inline" data-toggle="modal" data-target="#addDocsModal"><i class="fa fa-plus"></i></a>
                         </div>
-                        
+                        <div class="form-group col-md-12">
+                            <label for="page-title">SEO Title</label>
+                            <input type="text" class="form-control" id="seoTitle" name="seoTitle">
+                            <p>Pixels: <span id="pxl"></span>(545px) | Character: <span id="char"></span>(190)</p>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="page-description">SEO Description</label>
+                            <textarea type="text" class="form-control" id="seoDescription" name="seoDescription"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="page-keyword">Keywords</label>
+                            <textarea type="text" class="form-control" id="seoKeywords" name="seoKeywords"></textarea>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -93,6 +113,27 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="addDocsModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addDocsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDocsModalLabel">Add media</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('docs.upload.store') }}" method="POST" enctype="multipart/form-data" class="dropzone" id="docs-upload">
+                    @csrf
+                </form>
+                <button class="btn btn-primary btn-sm mt-1 w-100" id="loadMedia">Load Media</button>
+                <div id="doclibrary" class="p-2 content-justify-center mt-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('styles')
 <!-- Include Dropzone.js CSS-->
@@ -110,7 +151,8 @@
                 plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
                 toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
             });
-            uploadMedia()
+            uploadMedia();
+            uploadDocs();
         });
         function uploadMedia(){
             Dropzone.options.fileUpload = {
@@ -118,14 +160,23 @@
                 paramName: "file", // Name of the input field (file upload)
                 maxFilesize: 2, // Max file size in MB
                 uploadMultiple: false,
-                acceptedFiles: ".jpg, .jpeg, .png, .pdf", // Allowed file types
+                acceptedFiles: ".jpg, .jpeg, .png", // Allowed file types
+            };
+        }
+        function uploadDocs(){
+            Dropzone.options.docsUpload = {
+                maxFiles: 1,
+                paramName: "file", // Name of the input field (file upload)
+                maxFilesize: 2, // Max file size in MB
+                uploadMultiple: false,
+                acceptedFiles: ".pdf", // Allowed file types
             };
         }
         $('#loadMedia').on('click', function(){
             listMedia();
         });
         $(window).on('shown.bs.modal', function() { 
-            $('#addMediaModal').modal('show');
+            //$('#addMediaModal').modal('show');
             listMedia();
         });
         function listMedia() {
@@ -146,6 +197,28 @@
                 }
             });
         }
+        function listDocs() {
+            $('#doclibrary').empty();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'GET',
+                url: "{{ route('docs.list') }}",
+                dataType: 'JSON',
+                success: function(response) {
+                    response[0].forEach(function(key){
+                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
+                    })
+                }
+            });
+        }
+        $('#infoListBtn').on('click', function() {
+            
+        });
+
         function galleryBtn(imgid, img) {
             $('#image').val(imgid);
             $('#imgselect').val(img);

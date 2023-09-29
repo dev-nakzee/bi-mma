@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\MediaController;
+use App\Http\Controllers\DocumentController;
 
 Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function() {
     Route::get('/notices/all', [NoticeController::class, 'index'])->name('notice.index');
@@ -58,6 +59,13 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/media/list', 'list')->name('media.list');
     });
     
+    Route::controller(DocumentController::class)->group(function(){
+        Route::get('/documents/all', 'index')->name('docs.index');
+        Route::get('/documents/show/dataTable', 'show')->name('docs.table');
+        Route::post('/documents/upload/store', 'store')->name('docs.upload.store');
+        Route::post('/documents/delete', 'destroy')->name('docs.remove');
+        Route::get('/documents/list', 'list')->name('docs.list');
+    });
 
     Route::controller(PagesController::class)->group(function(){
         Route::get('/customize/pages', 'index')->name('customize.pages.index');

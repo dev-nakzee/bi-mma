@@ -75,7 +75,7 @@
   height: 100px !important;
   width: auto !important;
 }
-.tox-promotion {
+.tox-promotion, .tox-statusbar__branding {
   display: none;
 }
 label {
