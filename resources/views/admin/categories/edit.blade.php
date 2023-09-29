@@ -24,7 +24,7 @@
                     <div class="d-flex row">
                         @if($category)
                         @foreach($category as $cat)
-                        <input type="text" id="cat_id" name="cat_id" value="{{ $cat->id }}">
+                        <input hidden type="text" id="cat_id" name="cat_id" value="{{ $cat->id }}">
                         <div class="form-group col-md-12">
                             <label for="page-name">Category</label>
                             <input type="text" class="form-control" id="service" name="category" value="{{ $cat->category }}">
