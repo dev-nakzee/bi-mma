@@ -6,7 +6,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary btn-sm" href="{{ route('blogs.create')}}">New blog</a></div>
                 <div class="d-flex flex-column">
-                    <table id="datatable" class="table table-bordered table-hover table-sm">
+                    <table id="blogDatatable" class="table table-bordered table-hover table-sm">
                         <thead>
                           <tr>
                             <th>ID</th>
@@ -17,22 +17,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($blogs as $blog)
-                                <tr>
-                                    <td>{{ $blog->id }}</td>
-                                    <td>{{ $blog->name }}</td>
-                                    <td>{{ $blog->category }}</td>
-                                    <td>{{ $blog->status }}</td>
-                                    <td class="row">
-                                        <div class="mr-1"><a href="{{ route('customize.pages.edit', $blog->id) }}" class="btn btn-primary btn-sm"><i class="fa-light fa-edit"></i></a></div>
-                                        <form action="{{ route('customize.pages.destroy', $blog->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-light fa-trash-can"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+                           
                         </tbody>
                     </table>
                 </div>
@@ -49,9 +34,24 @@
     <!-- form wizard --> 
     <script>
         $(document).ready(function() {
-            var table = $('#datatable').DataTable({
-                paging: true,
-            });
+            loadDataTable();
         });
+        function loadDataTable() {
+            var table = $('#blogDatatable').DataTable({
+                paging: true,
+                retrieve: true,
+                processing: true,
+                serverSide: true,
+                responsive: true,
+                ajax: "{{ route('blogs.table') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'blog', name: 'blog'},
+                    {data: 'category', name: 'category'},
+                    {data: 'status', name: 'status'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
+                ]
+            });
+        }
     </script>
 @endsection

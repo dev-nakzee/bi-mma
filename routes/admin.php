@@ -32,7 +32,6 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
         Route::get('/products/edit/{id}', 'edit')->name('products.edit');
         Route::post('/products/update','update')->name('products.update');
         Route::post('/products/delete','destroy')->name('products.remove');
-
     });
 
    

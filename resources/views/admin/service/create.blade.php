@@ -215,8 +215,8 @@
                 },
                 error: function(response){
                     console.log(response);
-                    $('#editProductError').removeClass('d-none');
-                    $('#editProductError').html(response.responseJSON.message);
+                    $('#addServiceError').removeClass('d-none');
+                    $('#addServiceError').html(response.responseJSON.message);
                 }
             });
         });

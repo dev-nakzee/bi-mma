@@ -1,73 +1,70 @@
-@extends('admin.layouts.dash', ['title' => 'All Pages', 'module' => "Pages"])
+@extends('admin.layouts.dash', ['title' => 'Edit Blogs', 'module' => "Blogs"])
 @section('content')
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <form id="blogAddForm" method="POST" action="{{route('blogs.save')}}">
+                <form id="blogEditForm" method="POST" action="{{route('blogs.save')}}">
                     @csrf
                     <div class="row d-flex">
-                        <div class="col-md-6">
-                            @if ($errors->any())
-                                <div class="alert alert-danger alert-sm">
-                                        @foreach ($errors->all() as $error)
-                                            {{ $error }}
-                                        @endforeach
-                                </div>
-                            @endif
+                        <div class="col-md-6" id="EditBlogError">
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <a class="btn btn-danger btn-sm" href="{{url()->previous()}}">Cancel</a>
-                            <button class="btn btn-primary btn-sm ml-1" type="submit">Save</button>
+                            <button class="btn btn-primary btn-sm ml-1" id="blogEditSave">Save</button>
                         </div>
                     </div>
+                    @if($blogs)
+                    @php $blog = $blogs[0]; @endphp
+                    <input type="hidden" name="blogId" value="{{ $blog->id }}">
                     <div class="d-flex row">
                         <div class="form-group col-md-6">
                             <label for="page-name">Title</label>
-                            <input type="text" class="form-control" id="blogTitle" name="name" value="{{ old('category') }}">
+                            <input type="text" class="form-control" id="blogTitle" name="name" value="{{ $blog->name }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-name">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('category') }}">
+                            <input type="text" class="form-control" id="slug" name="slug" value="{{ $blog->slug }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Blog Image</label>
                             <div class="row">
-                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled>
+                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled value="{{ $blog->image}}">
                                 <input type="text" class="form-control col-11" id="image" name="image" disabled hidden>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="blog-img-alt">Image Alt</label>
-                            <input type="text" class="form-control" id="alt" name="image_alt">
+                            <input type="text" class="form-control" id="alt" name="image_alt" value="{{ $blog->img_alt }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="blog-category">Blog category</label>
-                            <select class="form-control" id="category_id" name="category_id">
+                            <select class="form-control" id="category_id" name="category_id" value="{{ $blog->category_id }}">
 
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="blog-category">Content</label>
-                            <textarea class="editor-area" id="content" name="content"></textarea>
+                            <textarea class="editor-area" id="content" name="content">{{ $blog->content}}</textarea>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="page-title">SEO Title</label>
-                            <input type="text" class="form-control" id="seoTitle" name="seoTitle">
+                            <input type="text" class="form-control" id="seoTitle" name="seoTitle" value="{{ $blog->meta_title}}">
                             <p>Pixels: <span id="pxl"></span>(545px) | Character: <span id="char"></span>(190)</p>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-description">SEO Description</label>
-                            <textarea type="text" class="form-control" id="seoDescription" name="seoDescription"></textarea>
+                            <textarea type="text" class="form-control" id="seoDescription" name="seoDescription" value="">{{ $blog->meta_description}}</textarea>
                             <p>Character: <span id="desChar"></span></p>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-keyword">Keywords</label>
-                            <textarea type="text" class="form-control" id="seoKeywords" name="seoKeywords"></textarea>
+                            <textarea type="text" class="form-control" id="seoKeywords" name="seoKeywords" value=''>{{ $blog->meta_keywords}}</textarea>
                             <p>Count: <span id="keywordCount"></span></p>
                         </div>
                     </div>
+                    @endif
                 </form>
             </div>
         </div>
@@ -206,10 +203,10 @@
             var array = string.split(',');
             console.log(array.length);
         });
-        $('#blogAddForm').on('submit', function(e){
+        $('#blogEditForm').on('submit', function(e){
             e.preventDefault();
         });
-        $("#blogAddForm").on('click', function(){
+        $("#blogEditSave").on('click', function(){
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -217,8 +214,8 @@
             });
             $.ajax({
                 type: 'POST',
-                url: "{{ route('blogs.save') }}",
-                data: $('#blogAddForm').serialize(),
+                url: "{{ route('blogs.update') }}",
+                data: $('#blogEditForm').serialize(),
                 dataType: 'JSON',
                 success: function(response) {
                     console.log(response);
@@ -228,7 +225,7 @@
                 },
                 error: function(response){
                     console.log(response);
-                    $('#addBlogError').html(response.responseJSON.message);
+                    $('#EditBlogError').html(response.responseJSON.message);
                 }
             });
         });

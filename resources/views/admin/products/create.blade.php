@@ -6,7 +6,7 @@
             <div class="card-body">
                 <form id="productAddForm">
                     <div class="row d-flex">
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="addProductError">
 
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
@@ -282,8 +282,7 @@
                 },
                 error: function(response){
                     console.log(response);
-                    $('#editProductError').removeClass('d-none');
-                    $('#editProductError').html(response.responseJSON.message);
+                    $('#addProductError').html(response.responseJSON.message);
                 }
             });
         });
