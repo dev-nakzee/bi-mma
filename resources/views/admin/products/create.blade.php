@@ -211,7 +211,7 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="libraryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
+                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="libraryBtn('+key.id+', `'+key.document+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000/{{ asset(`assets/admin/img/pdf.png`)}}"></button>');
                     })
                 }
             });
@@ -220,10 +220,10 @@
             listDocs();
         });
         $('#infoListBtn').on('click', function(){
-            $('#docType').val() = 'infolist';
+            $('#docType').val('infolist');
         });
         $('#guidelinesBtn').on('click', function(){
-            $('#docType').val() = 'guideline';
+            $('#docType').val('guideline');
         });
         
         function galleryBtn(imgid, img) {
@@ -233,7 +233,16 @@
             $('#addMediaModal').modal('hide');
         }
         function libraryBtn(docid, doc) {
-            
+            if($('#docType').val() === 'infolist')
+            {
+                $('input[name="infoList"]').val() = docid;
+                $('#infoList').val() = doc;
+            }
+            if($('#docType').val() === 'guideline')
+            {
+                $('input[name="guidelines"]').val() = docid;
+                $('#guidelines').val() = doc;
+            }
         }
 
         function displayTextWidth(text, font) {
