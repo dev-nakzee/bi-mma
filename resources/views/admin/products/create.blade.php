@@ -117,7 +117,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addDocsModalLabel">Add media</h5>
+                <h5 class="modal-title" id="addDocsModalLabel">Add Documents</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -126,7 +126,8 @@
                 <form action="{{ route('docs.upload.store') }}" method="POST" enctype="multipart/form-data" class="dropzone" id="docs-upload">
                     @csrf
                 </form>
-                <button class="btn btn-primary btn-sm mt-1 w-100" id="loadMedia">Load Media</button>
+                <button class="btn btn-primary btn-sm mt-1 w-100" id="loadDocs">Load Documents</button>
+                <input type="text" hidden id="docType">
                 <div id="doclibrary" class="p-2 content-justify-center mt-2">
 
                 </div>
@@ -210,21 +211,31 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
+                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="libraryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
                     })
                 }
             });
         }
-        $('#infoListBtn').on('click', function() {
-            
+        $('#loadDocs').on('click', function() {
+            listDocs();
         });
-
+        $('#infoListBtn').on('click', function(){
+            $('#docType').val() = 'infolist';
+        });
+        $('#guidelinesBtn').on('click', function(){
+            $('#docType').val() = 'guideline';
+        });
+        
         function galleryBtn(imgid, img) {
             $('#image').val(imgid);
             $('#imgselect').val(img);
             console.log(imgid+' img="'+img);
             $('#addMediaModal').modal('hide');
         }
+        function libraryBtn(docid, doc) {
+            
+        }
+
         function displayTextWidth(text, font) {
             let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));
             let context = canvas.getContext("2d");
