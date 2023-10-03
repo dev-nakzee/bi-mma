@@ -176,6 +176,9 @@
             let metrics = context.measureText(text);
             return metrics.width;
         }
+        $('#loadMedia').on('click', function(){
+            listMedia();
+        });
         $('#blogTitle').on('keyup', function() {
             var product = $(this).val();
             $('#slug').val(product.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, ''));
