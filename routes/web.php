@@ -17,9 +17,9 @@ use App\Http\Controllers\site\SiteServicesController;
 |
 */
 
-Route::get('/', function () {
-    return view('site.home');
-})->name('site.home');
+Route::controller(SiteController::class)->group(function(){
+    Route::get('/', 'homepage')->name('site.home');
+});
 
 Route::prefix('/')->group( function() {
     Route::controller(SiteServicesController::class)->group(function(){
