@@ -37,13 +37,23 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Category</label>
-                            <select class="form-control" id="category" name="category" multiple>
-
+                            <select class="form-control" id="category" name="category">
+                                @if($category)
+                                @foreach($category as $c)
+                                <option value="{{$c->id}}">{{$c->category}}</option>
+                                @endforeach
+                                @endif
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-slug">Services</label>
-                            <select class="form-control" id="services" name="services" multiple></select>
+                            <select class="form-control" id="services" name="services[]" multiple>
+                                @if($service)
+                                @foreach($service as $s)
+                                <option value="{{$s->id}}">{{$s->service}}</option>
+                                @endforeach
+                                @endif
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="page-short">Standards</label>
@@ -56,10 +66,6 @@
                         <div class="form-group col-md-12 d-block">
                             <label for="page-short">About product</label>
                             <textarea name="about" id="about" class="editor-area"></textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="page-short">Standards</label>
-                            <input type="text" class="form-control" id="standards" name="standards">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="page-title">Information List</label>
@@ -211,7 +217,7 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="libraryBtn('+key.id+', `'+key.document+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000/{{ asset(`assets/admin/img/pdf.png`)}}"></button>');
+                        $('#doclibrary').append('<button type="button" class="btn lazy docs-btn m-1 p-1" onclick="libraryBtn('+key.id+', `'+key.document+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="{{ asset("assets/admin/img/pdf.png")}}"><p>'+key.document+'</p></button>');
                     })
                 }
             });
@@ -235,14 +241,15 @@
         function libraryBtn(docid, doc) {
             if($('#docType').val() === 'infolist')
             {
-                $('input[name="infoList"]').val() = docid;
-                $('#infoList').val() = doc;
+                $('input[name="infoList"]').val(docid);
+                $('#infoList').val(doc);
             }
             if($('#docType').val() === 'guideline')
             {
-                $('input[name="guidelines"]').val() = docid;
-                $('#guidelines').val() = doc;
+                $('input[name="guidelines"]').val(docid);
+                $('#guidelines').val(doc);
             }
+            $('#addDocsModal').modal('hide');
         }
 
         function displayTextWidth(text, font) {
@@ -276,13 +283,7 @@
         $('#productAddForm').on('submit', function(e){
             e.preventDefault();
         });
-        let queCount = 0;
-        let ansCount = 0;
-        $('#addFaq').on('click', function(e){
-            queCount++;
-            ansCount++;
-            $('#faq').append('<div class="container col-md-12 row"><div class="col-md-6"><label>Question</label><input type="text" class="form-control" name="question['+queCount+']"></div><div class="col-md-6"><label>Answer</label><input type="text" class="form-control" name="answer['+ansCount+']"></div></div>');
-        });
+
         $("#productSave").on('click', function(){
             $.ajaxSetup({
                 headers: {
@@ -297,7 +298,7 @@
                 success: function(response) {
                     console.log(response);
                     if (response.status =='success') {
-                        window.location = "{{ route('products.index')}}";
+                        //window.location = "{{ route('products.index')}}";
                     }
                 },
                 error: function(response){

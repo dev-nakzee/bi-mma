@@ -51,7 +51,7 @@ class DocumentController extends Controller
             'path' => '/documents/'.$documentName,
             'document_type' => $document->getMimeType(),
         ]);
-        $image->move(public_path('documents'),$documentName);
+        $document->move(public_path('documents'),$documentName);
         return response()->json(['success'=>$documentName]);
     }
 
