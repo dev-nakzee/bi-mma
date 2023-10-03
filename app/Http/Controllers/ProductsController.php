@@ -130,7 +130,7 @@ class ProductsController extends Controller
                     return $row->tags;
                 })
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="products/edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delService('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
+                    $actionBtn = '<a href="edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delService('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action','services', 'compliances'])
@@ -143,9 +143,13 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Products $products)
+    public function edit($id)
     {
         //
+        $products = Products::where('id', $id)->first();
+        $category = Categories::select('id', 'category')->get();
+        $service = Services::select('id', 'service')->get();
+        return view('admin.products.edit', compact('products', 'category','service'));
     }
 
     /**
