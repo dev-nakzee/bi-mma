@@ -158,7 +158,7 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#gallery').append('<button type="button" class="btn lazy gallery-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="{{ url() }}'+key.path+'"></button>');
+                        $('#gallery').append('<button type="button" class="btn lazy gallery-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="{{ url("/") }}'+key.path+'"></button>');
                     })
                 }
             });
