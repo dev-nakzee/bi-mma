@@ -2,7 +2,10 @@
 
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\site\SiteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\site\SiteServicesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('site.home');
+Route::controller(SiteController::class)->group(function(){
+    Route::get('/', 'homepage')->name('site.home');
+});
+
+Route::prefix('/')->group( function() {
+    Route::controller(SiteServicesController::class)->group(function(){
+        Route::get('/services/{slug}', 'index')->name('site.services.index');
+        Route::get('/services/{slug}/{link?}', 'index')->name('site.services.index');
+    });
 });
 
 Route::get('/dashboard', function () {

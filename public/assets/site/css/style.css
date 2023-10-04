@@ -3,6 +3,14 @@
 * {
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
+	box-sizing: border-box;
+}
+body {
+	overflow-x: hidden;
+	-webkit-transition:all 0.8s ease !important;
+	-moz-transition:all 0.8s ease !important;
+	-o-transition:all 0.8s ease !important;
+	transition:all 0.8s ease !important;
 }
 .top-bar a {
 	text-decoration: none;
@@ -10,6 +18,9 @@
 }
 .site-logo {
 	height: 70px;
+}
+.site-logo-sticky {
+	height: 50px;
 }
 .header-img {
 	height: 70px;
@@ -26,6 +37,18 @@
 }
 .nav-link {
     color: #fff !important;
+}
+.breadcrumb-link {
+	text-decoration: none;
+	color: #000;
+}
+
+.service-nav a img{
+	width:  70px;
+    height: 70px;
+    object-fit: cover;
+	margin-bottom: 14px;
+	background-color: transparent;
 }
 .service-links a {
 	display: block;
@@ -65,10 +88,15 @@
     box-shadow: 2px 2px 20px #4e4e4e;
 }
 
+.services-pages {
+	overflow-x: hidden;
+}
+
 .footer {
 	background: #007bff;
 	color: #fff !important;
-	
+	z-index: 1090 !important;
+	position: relative;
 }
 .footer h5 {
 	font-style: normal;
@@ -83,6 +111,24 @@
 .footer a .fa-brands {
 	font-size: 22px !important;
 }
+
+.service-info-container {
+	max-height: 600px !important;
+	min-height: 500px;
+	overflow-y: scroll;
+}
+.service-info-container::-webkit-scrollbar {
+	width: 1px;               /* width of the entire scrollbar */
+}
+  
+.service-info-container::-webkit-scrollbar-track {
+	background: transparent;        /* color of the tracking area */
+}
+  
+.service-info-container::-webkit-scrollbar-thumb {
+	background-color: #fd7e14;    /* color of the scroll thumb */
+}
+
 
 @media all and (min-width: 992px) {
 	.dropdown-menu {

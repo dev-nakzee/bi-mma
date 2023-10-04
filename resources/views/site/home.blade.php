@@ -79,6 +79,24 @@
         </div>
     </div>
     <div class="section-3">
+        <div class="container-fluid row">
+            @if($blogs)
+            @foreach($blogs as $blog)
+            <div class="col-md-4 p-3">
+                <div class="card">
+                    @if($media)
+                    @foreach($media as $m)
+                        @if($m->id === $blog->image)
+                        <img src="{{ asset($media->path)}}" class="card-img-top" alt="{{ asset($blog->img_alt)}}">
+                        @endif
+                    @endforeach
+                    @endif
+                    <h3 class="card-title text-center">{{ $blog->name }}</h3>
+                </div>
+            </div>
+            @endforeach
+            @endif
+        </div>
     </div>
 @endsection
 @section('styles')

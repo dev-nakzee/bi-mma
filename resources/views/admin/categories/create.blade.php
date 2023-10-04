@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <form id="serviceAddForm" method="POST" action="{{route('category.save')}}">
+                <form id="categoryAddForm" method="POST" action="{{route('category.save')}}">
                     @csrf
                     <div class="row d-flex">
                         <div class="col-md-6">

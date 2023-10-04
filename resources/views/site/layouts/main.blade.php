@@ -2,8 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @yield('seo')
+    <meta content="index, follow" name="robots"/>
+    <meta name="author" content="Rajesh Kumar">
+    <meta name="publisher" content="MakeMyApproval"/>
+    
+    {{-- <meta name="Classification" content="Business">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    
+    <meta property="og:site_name" content="MakeMyApproval" />
+
+    <meta property="fb:page_id" content="1590316941238982"/>
+    <meta property="og:author" content="MakeMyApproval" />
+    <meta property="og:image" content="{{ asset('assets/site/images/logomma.png')}}" alt = "MakeMyApproval" />
+    <meta property="og:street-address" content="110, Sharma Complex A-2, Guru Nanak Pura">
+    <meta property="og:locality" content="Laxmi Nagar">
+    <meta property="og:region" content="Delhi">
+    <meta property="og:postal-code" content="110092">
+    <meta property="og:country-name" content="India">
+    <meta property="og:email" content="info@bl-india.com">
+    <meta property="og:phonenumber" content="+91-8130615678">
+    <meta property="og:brand" content="MakeMyApproval">
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:image" content="{{ asset('assets/site/images/logomma.png')}}" />
+
+    <meta name="twitter:site" content="@Brand_Liaison" /> --}}
+
     <link href="{{ asset('assets/site/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('assets/admin/css/fontawesome/css/all.css')}}" rel="stylesheet">
     @yield('styles')
@@ -29,6 +61,9 @@
       <!-- Menu -->
       <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange">
           <div class="container-fluid">
+              <div class="navbar-brand">
+                <img src="{{ asset('assets/site/images/MakeMyApproval-logo-black.png') }}" id="site-logo-sticky" class="img-responsive site-logo-sticky d-none"/>
+              </div>
               <!-- Nav Toggle Button -->
               <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" 
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -51,21 +86,56 @@
                       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                       <!-- Mega Menu -->
                       <div class="dropdown-menu mega-menu p-3">
-                          <span>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                          </span>
+                          <div class="container-fluid row px-5">
+                            @if($services)
+                            @foreach($services as $service)
+                            <div class="col-md-3 service-nav">
+                              <a href="{{ url('/services'.'/'.$service->slug)}}" class="card">
+                                <div class="card-body">
+                                  <img src="{{ url($service->path)}}">
+                                  <h5 class="card-title">{{ $service->service }}</h5>
+                                </div>
+                              </a>
+                            </div>
+                            @endforeach
+                            @endif
+                          </div>
                       </div>
                     </li>
-                    
                     <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
-                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> <span class="">Register</span></a>
+                <div class="btn-group">
+                  <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end" type="button" id="navbarRegisterBtn" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="inside" aria-expanded="false">
+                    <i class="fa fa-user-plus"></i> <span class="">Register</span>
+                  </button>
+                  <form class="dropdown-menu dropdown-menu-start p-4" aria-labelledby="navbarRegisterBtn">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                          Remember me
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> Register</a>                 
                 <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
               </div>
           </div>
       </nav>
+
     <!-- Ends -->
 
     @yield('content')

@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('compliances', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('serv_id')->nullable();
+            $table->unsignedBigInteger('service_id')->nullable();
+            $table->boolean('status');
             $table->timestamps();
+            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 

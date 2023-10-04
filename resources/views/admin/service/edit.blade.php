@@ -236,7 +236,7 @@
                 success: function(response) {
                     console.log(response);
                     if (response.status =='success') {
-                        //window.location = "{{ route('services.index')}}";
+                        window.location = "{{ route('services.index')}}";
                     }
                 },
                 error: function(response){
