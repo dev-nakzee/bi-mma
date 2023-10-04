@@ -34,7 +34,7 @@
                             <label for="page-slug">Blog Image</label>
                             <div class="row">
                                 <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled>
-                                <input type="text" class="form-control col-11" id="image" name="image" disabled hidden>
+                                <input type="text" class="form-control col-11" id="image" name="img_id" hidden>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>

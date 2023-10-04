@@ -29,7 +29,7 @@
                         <div class="form-group col-md-6">
                             <label for="page-slug">Blog Image</label>
                             <div class="row">
-                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled value="">
+                                <input type="text" class="form-control col-11" id="imgselect" disabled value="">
                                 <input type="text" class="form-control col-11" id="image" name="image" disabled hidden value="{{ $blog->image}}">
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
@@ -163,7 +163,6 @@
         function galleryBtn(imgid, img) {
             $('#image').val(imgid);
             $('#imgselect').val(img);
-            console.log(imgid+' img="'+img);
             $('#addMediaModal').modal('hide');
         }
         function displayTextWidth(text, font) {
