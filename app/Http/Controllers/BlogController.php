@@ -86,7 +86,7 @@ class BlogController extends Controller
                     return $status;
                 })
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="services/edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delService('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
+                    $actionBtn = '<a href="edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delService('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action', 'status'])
