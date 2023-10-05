@@ -58,11 +58,31 @@
                         </span>
                     </h4>
                     <div>
-                        @if($products)
-                        @foreach($products as $product)
-                        {{$product->product}}
-                        @endforeach
-                        @endif
+                        <table id="productList" class="table table-bordered table-hover table-sm">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Products</th>
+                                <th>Standards</th>
+                                <th>Compliances</th>
+                                <th>Link</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @if($products)
+                                @php $i = 1; @endphp
+                                @foreach($products as $product)
+                                    <tr>
+                                        <td>{{ $i }}</td>
+                                        <td>{{ $product->product }}</td>
+                                        <td>{{ $product->standard }}</td>
+                                        <td>{{ $product->compliance }}</td>
+                                        <td>{{ $product->id }}</td>
+                                        @php $i++; @endphp
+                                @endforeach
+                                @endif
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="documents-section" id="required-documents">
@@ -87,6 +107,19 @@
                         </span>
                     </h4>
                     <div>
+                        <table id="serviceDataTable" class="table table-bordered table-hover table-sm">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Products</th>
+                                <th>Standards</th>
+                                <th>Compliances</th>
+                                <th>Link</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="notification-section" id="industry-notifications">
@@ -126,12 +159,17 @@
     </div>
 @endsection
 @section('styles')
-<style> 
-
-</style>
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/datatables/datatables.min.css') }}" type="text/css" />
 @endsection
 @section('scripts')
+<script type="text/javascript" src="{{ asset('assets/admin/plugins/datatables/datatables.min.js')}}"></script>
 <script>
+    $(document).ready(function() {
+        let table = $('#productList').DataTable({
+            paging: true,
+            responsive: true,
+        });
+    });
     $('.action-url').on('click', function(e) {
         var href = $(this).attr('href');
         var link = $(this).html();
