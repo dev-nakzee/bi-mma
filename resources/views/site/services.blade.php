@@ -76,7 +76,7 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $product->product }}</td>
                                         <td>{{ $product->standard }}</td>
-                                        <td>{{ $product->compliance }}</td>
+                                        <td>{{ $product->standards }}</td>
                                         <td>{{ $product->id }}</td>
                                         @php $i++; @endphp
                                 @endforeach
