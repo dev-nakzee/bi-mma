@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\site\SiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\site\SiteServicesController;
+use App\Http\Controllers\site\SiteProductsController;
 
 
 /*
@@ -26,6 +27,10 @@ Route::prefix('/')->group( function() {
     Route::controller(SiteServicesController::class)->group(function(){
         Route::get('/services/{slug}', 'index')->name('site.services.index');
         Route::get('/services/{slug}/{link?}', 'index')->name('site.services.index');
+    });
+    Route::controller(SiteProductsController::class)->group(function(){
+        Route::get('/products/{slug}', 'index')->name('site.products.index');
+        Route::get('/products/{slug}/{link?}', 'index')->name('site.products.index');
     });
 });
 
