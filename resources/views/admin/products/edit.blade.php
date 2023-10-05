@@ -298,7 +298,7 @@
                 success: function(response) {
                     console.log(response);
                     if (response.status =='success') {
-                        //window.location = "{{ route('products.index')}}";
+                        window.location = "{{ route('products.index')}}";
                     }
                 },
                 error: function(response){

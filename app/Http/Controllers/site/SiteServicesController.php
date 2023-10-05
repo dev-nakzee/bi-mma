@@ -20,6 +20,10 @@ class SiteServicesController extends Controller
         //
         $services = Services::join('media', 'services.media_id','media.id')->where('slug', $slug)->first();
         $products = ProdServMap::join('products', 'prod_serv_maps.product_id', 'products.id')->where('prod_serv_maps.service_id', $services->id)->get();
+        $otherServ = [];
+        foreach ($products as $product) {
+            $serv = ProdServMap::join('services', 'prod_serv_maps.service_id','services.id')->where('prod_serv_maps.product_id', $product->product_id)->get();
+        }
         return view('site.services', compact('services','products'));
     }
 
