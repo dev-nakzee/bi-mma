@@ -26,10 +26,10 @@
                             <input type="text" class="form-control" id="slug" name="slug" value="{{$data->slug}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="page-slug">Service Image</label>
+                            <label for="page-slug">Product Image</label>
                             <div class="row">
-                                <select type="text" class="form-control col-11" id="image" name="image" value="{{$data->image}}">
-                                </select>
+                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled>
+                                <input type="text" class="form-control col-11" id="image" name="image" value="{{$data->img_id}}" hidden>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
     </div>
 </div>
 <div class="modal fade" id="addMediaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addMediaModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addMediaModalLabel">Add media</h5>
@@ -127,7 +127,11 @@
             <div class="modal-body">
                 <form action="{{ route('media.upload.store') }}" method="POST" enctype="multipart/form-data" class="dropzone" id="file-upload">
                     @csrf
-                </form> 
+                </form>
+                <button class="btn btn-primary btn-sm mt-1 w-100" id="loadMedia">Load Media</button>
+                <div id="gallery" class="p-2 content-justify-center mt-2">
+
+                </div>
             </div>
         </div>
     </div>
@@ -158,16 +162,28 @@
             $('#serviceEditForm').on('submit', function(e){
                 e.preventDefault();
             });
-            listMedia()
+            uploadMedia();
         });
         $('#serviceEditForm').on('submit', function(e){
             e.preventDefault();
         });
-        $('#addMediaModal').on('hidden.bs.modal', function () {
+        function uploadMedia(){
+            Dropzone.options.fileUpload = {
+                maxFiles: 1,
+                paramName: "file", // Name of the input field (file upload)
+                maxFilesize: 2, // Max file size in MB
+                uploadMultiple: false,
+                acceptedFiles: ".jpg, .jpeg, .png", // Allowed file types
+            };
+        }$('#loadMedia').on('click', function(){
+            listMedia();
+        });
+        $(window).on('shown.bs.modal', function() { 
+            //$('#addMediaModal').modal('show');
             listMedia();
         });
         function listMedia() {
-            $('#image').empty();
+            $('#gallery').empty();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -179,10 +195,16 @@
                 dataType: 'JSON',
                 success: function(response) {
                     response[0].forEach(function(key){
-                        $('#image').append('<option value="'+key.id+'"><img style="width:20px;" src="http://localhost:8000'+key.path+'">'+key.media+'</option>');
+                        $('#gallery').append('<button type="button" class="btn lazy gallery-btn m-1 p-1" onclick="galleryBtn('+key.id+', `'+key.name+'`)" value="'+key.id+'"><img class="gallery-image lazy" src="http://localhost:8000'+key.path+'"></button>');
                     })
                 }
             });
+        }
+        function galleryBtn(imgid, img) {
+            $('#image').val(imgid);
+            $('#imgselect').val(img);
+            console.log(imgid+' img="'+img);
+            $('#addMediaModal').modal('hide');
         }
         function displayTextWidth(text, font) {
             let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));

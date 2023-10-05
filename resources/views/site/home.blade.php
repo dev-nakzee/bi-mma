@@ -79,21 +79,23 @@
         </div>
     </div>
     <div class="section-3">
-        <div class="container-fluid row">
+        <div class="container-fluid owl-carousel home-blogs" id="owl-carousel">
             @if($blogs)
             @foreach($blogs as $blog)
-            <div class="col-md-4 p-3">
-                <div class="card">
-                    @if($media)
-                    @foreach($media as $m)
-                        @if($m->id === $blog->image)
-                        <img src="{{ asset($media->path)}}" class="card-img-top" alt="{{ asset($blog->img_alt)}}">
-                        @endif
-                    @endforeach
-                    @endif
+                <div>
                     <h3 class="card-title text-center">{{ $blog->name }}</h3>
                 </div>
-            </div>
+            @endforeach
+            @endif
+        </div>
+    </div>
+    <div class="section-3">
+        <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
+            @if($testimonial)
+            @foreach($testimonial as $test)
+                <div>
+                    <h3 class="card-title text-center">{{ $test->content }}</h3>
+                </div>
             @endforeach
             @endif
         </div>
@@ -129,7 +131,24 @@
     
     }
     </style>
+    <link rel="stylesheet" href="{{asset('assets/site/owl-slider/assets/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/site/owl-slider/assets/owl.theme.default.min.css')}}">
 @endsection
 @section('scripts')
-
+<script src="{{asset('assets/site/owl-slider/owl.carousel.min.js')}}"></script>
+<script>
+    $(document).ready(function(){
+        $("#owl-carousel").owlCarousel({
+            center: true,
+            items:2,
+            loop:false,
+            margin:10,
+            responsive:{
+                600:{
+                    items:4
+                }
+            }
+        });
+    });
+</script>
 @endsection
