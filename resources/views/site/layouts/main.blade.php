@@ -163,38 +163,13 @@
         <div class="col-md-3">
           <h5>Services</h5>
           <ul class="nav flex-column">
-            <li> <a href="#">
-              BIS/ CRS Registration
-          </a>
-      </li>
-            <li> <a href="#">
-              BEE Registration
-          </a>
-      </li>
-       <li> <a href="#">
-              EPRA for Battery Waste
-          </a>
-      </li>
-          <li> <a href="#">
-              EPRA for E-Waste
-          </a>
-      </li>
-       <li> <a href="#">
-              WPC-ETA Approval
-          </a>
-      </li>
-      <li> <a href="#">
-              EPR Authorization for P-Waste Products
-          </a>
-      </li>
-      <li> <a href="#">
-              ISI / BIS Certification
-          </a>
-      </li>
-      <li> <a href="#">
-              TEC Certification
-          </a>
-      </li>
+            @foreach ($services as $s)
+              <li> 
+                <a href="{{ route('site.services.index', $s->slug)}}">
+                {{ $s->service }}
+                </a>
+              </li>
+            @endforeach
           </ul>
           <h5 class="mt-4">Industries</h5>
           <ul class="nav flex-column">
