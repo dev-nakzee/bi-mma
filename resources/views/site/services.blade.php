@@ -58,6 +58,11 @@
                         </span>
                     </h4>
                     <div>
+                        @if($products)
+                        @foreach($products as $product)
+                        {{$product->product}}
+                        @endforeach
+                        @endif
                     </div>
                 </div>
                 <div class="documents-section" id="required-documents">

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Services;
+use App\Models\Compliances;
+use App\Models\Categories;
+use App\Models\ProdServMap;
+use App\Models\Products;
 
 class SiteServicesController extends Controller
 {
@@ -15,7 +19,8 @@ class SiteServicesController extends Controller
     {
         //
         $services = Services::join('media', 'services.media_id','media.id')->where('slug', $slug)->first();
-        return view('site.services', compact('services'));
+        $products = ProdServMap::join('products', 'prod_serv_maps.product_id', 'products.id')->where('prod_serv_maps.service_id', $services->id)->get();
+        return view('site.services', compact('services','products'));
     }
 
     /**

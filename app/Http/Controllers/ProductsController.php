@@ -84,11 +84,10 @@ class ProductsController extends Controller
         //
         if($request->ajax()){
             $data = Products::selectRaw('products.id as id, product, category,
-        group_concat(prod_serv_maps.service_id) as serv,
-        group_concat(prod_compl_maps.compliance_id) as compl')
+        group_concat(prod_serv_maps.service_id) as serv')
             ->join('categories','products.category_id','categories.id')
             ->rightJoin('prod_serv_maps','products.id','prod_serv_maps.product_id')
-            ->rightJoin('prod_compl_maps','products.id','prod_compl_maps.product_id')
+            // ->rightJoin('prod_compl_maps','products.id','prod_compl_maps.product_id')
             ->groupBy('products.id')
             ->get();
             return Datatables::of($data)
@@ -113,19 +112,19 @@ class ProductsController extends Controller
                     }
                     return $data;
                 })
-                ->addColumn('compliances', function($row){
-                    $compl = explode(',', $row->compl);
-                    $compl = array_unique($compl);
-                    $compliance = DB::table('compliances')
-                    ->select('name')
-                    ->whereIn('id',$compl)
-                    ->get();
-                    $data = '';
-                    foreach($compliance as $compliance) {
-                        $data = $data.'<span class="badge badge-primary mr-1">'.$compliance->name.'</span>';
-                    }
-                    return $data;
-                })
+                // ->addColumn('compliances', function($row){
+                //     $compl = explode(',', $row->compl);
+                //     $compl = array_unique($compl);
+                //     $compliance = DB::table('compliances')
+                //     ->select('name')
+                //     ->whereIn('id',$compl)
+                //     ->get();
+                //     $data = '';
+                //     foreach($compliance as $compliance) {
+                //         $data = $data.'<span class="badge badge-primary mr-1">'.$compliance->name.'</span>';
+                //     }
+                //     return $data;
+                // })
                 ->addColumn('tags', function($row){
                     return $row->tags;
                 })
