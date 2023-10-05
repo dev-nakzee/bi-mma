@@ -58,7 +58,7 @@
                         </span>
                     </h4>
                     <div>
-                        <table id="productList" class="table table-bordered table-hover table-sm">
+                        <table id="product0List" class="table table-bordered table-hover table-sm">
                             <thead>
                               <tr>
                                 <th>#</th>
@@ -75,10 +75,11 @@
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $product->product }}</td>
-                                        <td>{{ $product->standard }}</td>
+                                        <td>{{ $product->slug}}</td>
                                         <td>{{ $product->standards }}</td>
-                                        <td>{{ $product->id }}</td>
-                                        @php $i++; @endphp
+                                        <td><a class='btn-sm btn-primanry' href="{{ url('/products/'.$product->slug)}}">View</a></td>
+                                    </tr>
+                                @php $i++; @endphp
                                 @endforeach
                                 @endif
                             </tbody>
@@ -107,19 +108,7 @@
                         </span>
                     </h4>
                     <div>
-                        <table id="serviceDataTable" class="table table-bordered table-hover table-sm">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>Products</th>
-                                <th>Standards</th>
-                                <th>Compliances</th>
-                                <th>Link</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+
                     </div>
                 </div>
                 <div class="notification-section" id="industry-notifications">

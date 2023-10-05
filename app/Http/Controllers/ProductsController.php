@@ -83,7 +83,7 @@ class ProductsController extends Controller
     {
         //
         if($request->ajax()){
-            $data = Products::select('products.id as id', 'products.product as product', 'categories.category as category')
+            $data = Products::select('products.id as id', 'products.product as product', 'products.standards as compliances','categories.category as category')
             ->join('categories','products.category_id','categories.id')
             ->get();
             return Datatables::of($data)
@@ -106,6 +106,9 @@ class ProductsController extends Controller
                         $data = $data.'<span class="badge badge-secondary mr-1">'.$service->service.'</span>';
                     }
                     return $data;
+                })
+                ->addColumn('compliance', function($row){
+                    $row->compliances;
                 })
                 ->addColumn('action', function($row){
                     $actionBtn = '<a href="edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delProduct('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';

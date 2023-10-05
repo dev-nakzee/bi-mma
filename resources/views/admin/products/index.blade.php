@@ -13,7 +13,7 @@
                             <th>Products</th>
                             <th>Category</th>
                             <th>Serivces</th>
-                            {{-- <th>Compliances</th> --}}
+                            <th>Compliances</th>
                             <th>Actions</th>
                           </tr>
                         </thead>
@@ -49,7 +49,7 @@
                     {data: 'product', name: 'product'},
                     {data: 'category', name: 'category'},
                     {data: 'services', name: 'services'},
-                    // {data: 'compliances', name: 'compliances'},
+                    {data: 'compliances', name: 'compliances'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
