@@ -28,8 +28,8 @@
                         <div class="form-group col-md-6">
                             <label for="page-slug">Product Image</label>
                             <div class="row">
-                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled>
-                                <input type="text" class="form-control col-11" id="image" name="image" value="{{$data->img_id}}" hidden>
+                                <input type="text" class="form-control col-11" id="imgselect" name="imgselect" disabled value="{{$data->name}}">
+                                <input type="text" class="form-control col-11" id="image" name="image" value="{{$data->media_id}}" hidden>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addMediaModal"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>

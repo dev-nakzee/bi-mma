@@ -103,7 +103,10 @@ class ServicesController extends Controller
     public function edit($id)
     {
         //
-        $service = Services::where('id',$id)->get();
+        $service = Services::select('services.*', 'media.name')
+        ->join('media', 'services.media_id', 'media.id')
+        ->where('id',$id)
+        ->get();
         return view('admin.service.edit', compact('service'));
     }
 
