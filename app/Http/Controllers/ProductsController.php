@@ -83,11 +83,8 @@ class ProductsController extends Controller
     {
         //
         if($request->ajax()){
-            $data = Products::selectRaw('products.id as id, product, category,
-        group_concat(prod_serv_maps.service_id) as serv')
+            $data = Products::select('products.id as id', 'products.product as product', 'categories.category as category')
             ->join('categories','products.category_id','categories.id')
-            ->rightJoin('prod_serv_maps','products.id','prod_serv_maps.product_id')
-            ->groupBy('products.id')
             ->get();
             return Datatables::of($data)
                 ->addIndexColumn()
@@ -98,12 +95,11 @@ class ProductsController extends Controller
                     return $row->category;
                 })
                 ->addColumn('services', function($row){
-                    $serv = explode(',', $row->serv);
-                    $serv = array_unique($serv);
-                    $services = DB::table('services')
+                    $prodId = $row->id;
+                    $services = ProdServMap::join('services', 'services.id', 'prod_serv_maps.service_id')
                     ->select('service')
                     ->distinct('id')
-                    ->whereIn('id', $serv)
+                    ->where('product_id', $prodId)
                     ->get();
                     $data = '';
                     foreach($services as $service){
@@ -111,27 +107,11 @@ class ProductsController extends Controller
                     }
                     return $data;
                 })
-                // ->addColumn('compliances', function($row){
-                //     $compl = explode(',', $row->compl);
-                //     $compl = array_unique($compl);
-                //     $compliance = DB::table('compliances')
-                //     ->select('name')
-                //     ->whereIn('id',$compl)
-                //     ->get();
-                //     $data = '';
-                //     foreach($compliance as $compliance) {
-                //         $data = $data.'<span class="badge badge-primary mr-1">'.$compliance->name.'</span>';
-                //     }
-                //     return $data;
-                // })
-                ->addColumn('tags', function($row){
-                    return $row->tags;
-                })
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delService('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
+                    $actionBtn = '<a href="edit/'.$row->id.'" class="btn btn-primary btn-sm py-0 px-1 mr-1"><i class="fa-light fa-edit"></i></a><button onclick="delProduct('.$row->id.')" class="btn btn-danger btn-sm py-0 px-1"><i class="fa-light fa-trash"></i></button>';
                     return $actionBtn;
                 })
-                ->rawColumns(['action','services', 'compliances'])
+                ->rawColumns(['action','services'])
                 ->escapeColumns([])
                 ->make(true);
         }
