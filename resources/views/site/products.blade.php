@@ -29,15 +29,17 @@
                 </div>
             </div>
             <div class="col-md-9 ps-5 service-info-container float-right" data-bs-spy="scroll" data-bs-target="#service-details" data-bs-smooth-scroll="true" tabindex="0">
-                <div>
-                    <h2 class="d-inline-block">{{$products->product}}</h2>
-                </div>
-                <div class="about-section" id="about-service">
-                    <div>
+                <div class="about-section row" id="product-details">
+                    <div class="col-md-6">
                         <img width="200px" src="{{ $media->path }}" alt="{{ $products->img_alt }}">
-                        {!! $products->description !!}
                     </div>
-                    <div>
+                    <div class="col-md-6">
+                        <h2 class="d-inline-block">{{$products->product}}</h2>
+                        @if($services)
+                        @foreach($services as $service)
+                        <a href="{{ route('site.services.index', $service->slug)}}">{{ $service->service }}</a>
+                        @endforeach
+                        @endif
                         {!! $products->description !!}
                     </div>
                 </div>
