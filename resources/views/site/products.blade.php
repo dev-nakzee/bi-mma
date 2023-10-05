@@ -34,7 +34,7 @@
                 </div>
                 <div class="about-section" id="about-service">
                     <div>
-                        <img src="{{ $media->path }}" alt="{{ $products->img_alt }}">
+                        <img width="200px" src="{{ $media->path }}" alt="{{ $products->img_alt }}">
                         {!! $products->description !!}
                     </div>
                     <div>

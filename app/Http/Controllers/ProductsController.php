@@ -53,7 +53,7 @@ class ProductsController extends Controller
             'slug' => $request->slug,
             'category_id' => $request->category,
             'standards' => $request->standards,
-            'description' => trim($request->description),
+            'description' => $request->description,
             'about' => $request->about,
             'choose_us' => $request->choose_us,
             'seo_title' => $request->seoTitle,
