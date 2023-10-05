@@ -87,7 +87,6 @@ class ProductsController extends Controller
         group_concat(prod_serv_maps.service_id) as serv')
             ->join('categories','products.category_id','categories.id')
             ->rightJoin('prod_serv_maps','products.id','prod_serv_maps.product_id')
-            // ->rightJoin('prod_compl_maps','products.id','prod_compl_maps.product_id')
             ->groupBy('products.id')
             ->get();
             return Datatables::of($data)
