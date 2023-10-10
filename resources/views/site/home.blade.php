@@ -33,7 +33,8 @@
         <h2>Stay updated with latest trends</h2>
         @if($blogs)
         @foreach($blogs as $blog)
-        <div class="card col-md-4 blog-tiles">
+        <div class="col-md-4 p-3">
+        <div class="card blog-tiles">
             <img src="{{ $blog->path }}" class="card-img-top" alt="{{ $blog->img_alt }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $blog->name}}</h5>
@@ -41,6 +42,7 @@
                 <a href="{{ url('blogs/'.$blog->slug) }}" class="btn btn-primary">Read More</a>
             </div>
             </div>
+        </div>
         @endforeach
         @endif
         <a href="{{ url('blogs/') }}" class="btn btn-primary text-center my-2">Read More</a>
