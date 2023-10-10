@@ -12,24 +12,6 @@
             </li>
             @endforeach
             @endif
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon1.png')}}">
-            </li>
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon2.png')}}">
-            </li>
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon3.png')}}">
-            </li>
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon4.png')}}">
-            </li>
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon5.png')}}">
-            </li>
-            <li>
-                <img src="{{ asset('assets/site/images/services/serviceicon6.png')}}">
-            </li>
         </ul>
     </div>
     <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
