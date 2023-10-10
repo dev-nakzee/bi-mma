@@ -15,7 +15,7 @@
         </ul>
     </div>
     <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
-        <h2>Blogs</h2>
+        <h2>Prominent Product Approvals<br>For Indian Market</h2>
         <div class="container-fluid row py-5 service-links">
             @if($service)
             @foreach($service as $s)
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="section-3 row container-fluid px-5">
-        <h2>What Clients Say?</h2>
+        <h2>Stay updated with latest trends</h2>
         @if($blogs)
         @foreach($blogs as $blog)
         <div class="card col-md-4 blog-tiles">
@@ -46,7 +46,7 @@
         <a href="{{ url('blogs/') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
     <div class="section-3">
-        <h2>Prominent Product Approvals<br>For Indian Market</h2>
+        <h2>What clients say?</h2>
         <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
             @if($testimonial)
             @foreach($testimonial as $test)
