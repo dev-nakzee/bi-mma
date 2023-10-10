@@ -13,9 +13,14 @@ class SiteController extends Controller
     //
     public function homepage()
     {
-        $services = Services::all();
+        $service = Services::select('services.*', 'media.path as path')
+        ->join('media', 'services.media_id', '=','media.id')
+        ->get();
         $testimonial = [];
-        $blogs = Blog::select('blogs.*', 'media.path as path')->join('media', 'blogs.image', 'media.id')->limit(5)->get();
-        return view('site.home', compact('services', 'blogs', 'testimonial'));
+        $blogs = Blog::select('blogs.*', 'media.path as path')
+        ->join('media', 'blogs.image', 'media.id')
+        ->limit(5)
+        ->get();
+        return view('site.home', compact('service', 'blogs', 'testimonial'));
     }
 }

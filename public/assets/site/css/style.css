@@ -76,6 +76,9 @@ body {
     margin-bottom: 1rem;
 	list-style: none;
 }
+.service-icon li img {
+	height: 50px;
+}
 .service-icon li {
 	float: left;
     margin: 16px;

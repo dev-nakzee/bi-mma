@@ -5,6 +5,13 @@
         <h1 class="">Launch Your Product In India?</h1>
         <p class="mb-5">Get your Product Approval to Sell it in India Fast & Economical way</p>
         <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
+            @if($service)
+            @foreach($service as $s)
+            <li>
+                <img src="{{ $s->path }}" alt="{{ $s->img_alt }}">
+            </li>
+            @endforeach
+            @endif
             <li>
                 <img src="{{ asset('assets/site/images/services/serviceicon1.png')}}">
             </li>
@@ -28,54 +35,16 @@
     <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
         <h1>Prominent Product Approvals<br>For Indian Market</h1>
         <div class="container-fluid row py-5 service-links">
+            @if($service)
+            @foreach($service as $s)
             <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon1.png')}}">
-                    <p>BIS/ CRS Registration</p>
+                <a href="{{ url('services/'.$s->slug) }}">
+                    <img src="{{ $s->path}}">
+                    <p>{{ $s->service }}</p>
                 </a>
             </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon4.png')}}">
-                    <p>BEE Registration</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon3.png')}}">
-                    <p>EPRA for Battery Waste</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon3.png')}}">
-                    <p>EPRA for E-Waste</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon5.png')}}">
-                    <p>WPC-ETA Approval</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon3.png')}}">
-                    <p>EPR Authorization for P-Waste Products</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon6.png')}}">
-                    <p>ISI / BIS Certification</p>
-                </a>
-            </div>
-            <div class="col-md-3 p-3">
-                <a href="#">
-                    <img src="{{ asset('assets/site/images/services/serviceicon2.png')}}">
-                    <p>TEC Certification</p>
-                </a>
-            </div>
+            @endforeach
+            @endif
         </div>
     </div>
     <div class="section-3">
