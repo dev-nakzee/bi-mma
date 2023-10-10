@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
+            $table->string('client');
+            $table->string('position');
+            $table->text('description');
+            $table->boolean('is_active');
+            $table->unsignedBigInteger('media_id');
             $table->timestamps();
+            $table->softDeletes();
+            $table->foreign('media_id')->references('id')->on('media')->onDelete('cascade');
         });
     }
 
