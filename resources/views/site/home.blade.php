@@ -47,7 +47,7 @@
         @endif
         <a href="{{ url('blogs/') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
-    <div class="section-3">
+    <div class="section-3 row container-fluid px-5 text-center">
         <h2>What clients say?</h2>
         <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
             @if($testimonial)
