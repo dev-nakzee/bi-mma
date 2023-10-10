@@ -130,6 +130,7 @@ body {
 	min-height: 500px;
 	overflow-y: scroll;
 }
+
 .service-info-container::-webkit-scrollbar {
 	width: 1px;               /* width of the entire scrollbar */
 }
@@ -141,7 +142,9 @@ body {
 .service-info-container::-webkit-scrollbar-thumb {
 	background-color: #fd7e14;    /* color of the scroll thumb */
 }
-
+.service-info-container div  {
+	min-height: 500px;
+}
 
 @media all and (min-width: 992px) {
 	.dropdown-menu {
