@@ -50,6 +50,8 @@ body {
 	margin-bottom: 14px;
 	background-color: transparent;
 }
+
+
 .service-links a {
 	display: block;
 	border: #fd7e14 1px solid;
@@ -93,6 +95,13 @@ body {
 
 .services-pages {
 	overflow-x: hidden;
+}
+
+.blog-tile img {
+	height: 150px;
+    object-fit: cover;
+	margin-bottom: 14px;
+	background-color: transparent;
 }
 
 .footer {

@@ -19,7 +19,7 @@ class SiteController extends Controller
         $testimonial = [];
         $blogs = Blog::select('blogs.*', 'media.path as path')
         ->join('media', 'blogs.image', 'media.id')
-        ->limit(5)
+        ->limit(3)
         ->get();
         return view('site.home', compact('service', 'blogs', 'testimonial'));
     }

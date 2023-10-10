@@ -29,19 +29,20 @@
             @endif
         </div>
     </div>
-    <div class="section-3 row container-fluid py-5">
-            @if($blogs)
-            @foreach($blogs as $blog)
-            <div class="card col-md-4">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-              </div>
-            @endforeach
-            @endif
+    <div class="section-3 row container-fluid px-5">
+        @if($blogs)
+        @foreach($blogs as $blog)
+        <div class="card col-md-4 blog-tiles">
+            <img src="{{ $blog->path }}" class="card-img-top" alt="{{ $blog->img_alt }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ $blog->name}}</h5>
+                {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                <a href="{{ url('blogs/'.$blog->slug) }}" class="btn btn-primary">Read More</a>
+            </div>
+            </div>
+        @endforeach
+        @endif
+        <a href="{{ url('blogs/') }}" class="btn btn-primary text-center">Read More</a>
     </div>
     <div class="section-3">
         <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
