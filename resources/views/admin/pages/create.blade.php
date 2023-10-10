@@ -15,9 +15,11 @@
                             <label for="page-slug">Slug</label>
                             <input type="text" class="form-control" id="page-slug">
                         </div>
-                        <textarea id="inp_editor1" >
-                            &lt;p&gt;Initial Document Content&lt;/p&gt; 
-                        </textarea>
+                        <div class="form-group">
+                            <label for="page-slug">Content</label>
+                            <textarea id="editor-area" name="content">
+                            </textarea>
+                        </div>
                         <div class="form-group">
                             <label for="page-short">Page Description</label>
                             <textarea class="form-control" id="page-short"></textarea>
@@ -56,14 +58,12 @@
 </div>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />  
+
 @endsection
 @section('scripts')
-<script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>  
-<script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>  
+<script src="{{asset('tinymce/tinymce.min.js')}}" referrerpolicy="origin"></script>
     <script>
         $(document).ready(function() {
-            var editor1 = new RichTextEditor("#inp_editor1");
         });
     </script>
 @endsection

@@ -50,7 +50,7 @@
           </div>
           <div class="col-12 row bg-light px-2">
             <div class="col-3"> 
-              <img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/>
+              <a href="{{ route('site.home')}}"><img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/></a>
             </div>
             <div class="col-9 pe-0">
               <img class="header-img p-2 float-end d-none d-lg-inline" src="{{ asset('assets/site/images/raclogo1.png')}}"/>
