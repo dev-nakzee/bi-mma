@@ -29,7 +29,7 @@
             @endif
         </div>
     </div>
-    <div class="section-3 row container-fluid px-5">
+    <div class="section-3 row container-fluid px-5 text-center">
         <h2>Stay updated with latest trends</h2>
         @if($blogs)
         @foreach($blogs as $blog)
