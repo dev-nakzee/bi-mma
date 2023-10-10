@@ -42,7 +42,7 @@
             </div>
         @endforeach
         @endif
-        <a href="{{ url('blogs/') }}" class="btn btn-primary text-center">Read More</a>
+        <a href="{{ url('blogs/') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
     <div class="section-3">
         <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
