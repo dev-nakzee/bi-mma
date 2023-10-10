@@ -33,7 +33,6 @@
         </div>
         <div class="col-md-12 row px-5 pt-3">
             <div class="col-md-3 bg-white border-rounded" id="sidebar-services">
-                <p class="text-center fs-4"> {{ $services->service }}</p>
                 <div id="service-details" class="list-group">
                     <a class="list-group-item list-group-item-action action-url" href="#about-service">About Service</a>
                     <a class="list-group-item list-group-item-action action-url" href="#mandatory-product-list">Mandatory Product List</a>
