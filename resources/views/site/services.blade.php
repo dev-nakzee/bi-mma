@@ -86,16 +86,27 @@
                     </div>
                 </div>
                 <div class="documents-section" id="required-documents">
+                    <h4>
+                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
+                            Required Product List
+                        </span>
+                    </h4>
                     <div>
                         {!! $services->documents !!}
                     </div>
                 </div>
                 <div class="costing-timeline-section" id="standard-costing-timeline">
+                    <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
+                        Standard Costing &amp; Timeline
+                    </span>
                     <div>
                         {!! $services->stdcosttime!!}
                     </div>
                 </div>
                 <div class="process-section" id="registration-process">
+                    <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
+                        Registration Process
+                    </span>
                     <div>
                         {!! $services->process!!}
                     </div>
