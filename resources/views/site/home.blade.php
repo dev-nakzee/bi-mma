@@ -21,7 +21,7 @@
             @foreach($service as $s)
             <div class="col-md-3 p-3">
                 <a href="{{ url('services/'.$s->slug) }}">
-                    <img src="{{ $s->path}}">
+                    <img src="{{ $s->path}}" alt="{{ $s->img_alt }}">
                     <p>{{ $s->service }}</p>
                 </a>
             </div>
