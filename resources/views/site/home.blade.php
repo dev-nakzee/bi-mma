@@ -39,6 +39,36 @@ certification for your products and make sure that they are compliant for a succ
 launch.
         </p>
     </div>
+    <div class="section-3 row container-fluid px-5 text-center">
+        <h2>Latest Industry Notifications</h2>
+        <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
+            products with the required certifications and approvals. You can get the latest notifications
+            for all the compliance services on our website to ensure that your products meet regulatory
+            requirements. Our platform provides you with real-time notifications, so you&#39;ll never miss
+            important updates.</p>
+            <div id="notices" class="carousel slide p-3 bg-secondary" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item px-5 active">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+                  </div>
+                  <div class="carousel-item px-5">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+                  </div>
+                  <div class="carousel-item px-5">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id ligula porta, mollis tortor id, volutpat diam. Praesent metus eros, egestas vitae feugiat at, bibendum et erat.</p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#notices" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#notices" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>          
+              </div>
+        <a href="{{ route('site.clients') }}" class="btn btn-secondary bg-orange btn-sm col-md-3 text-center my-2 mx-auto">Explore older</a>
+    </div>
     <div class="section-3 row container-fluid px-5 text-center my-5">
         <h2>Stay updated with latest trends</h2>
         <p>Our blogs are your one-stop destination for everything you need to know. Whether you
