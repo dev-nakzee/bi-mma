@@ -42,22 +42,10 @@
             @endif
         </div>
     </div>
-    <div class="section-2 text-center p-5 mb-3 bg-orange text-grey">
-        <h2>Product List Which Needs Approval Before the Launch</h2>
-        <p>
-There are many products that need approval or certification before they can enter in the
-market for various compliance service categories like BIS, BEE, WPC-ETA, TEC and ISI. We&#39;ve
-compiled a comprehensive list of these products so that you can easily check the required
-certification for your products and make sure that they are compliant for a successful
-launch.
-        </p>
-        <form class="form-inline">
-            <div class="container mb-2 row">
-              <label for="search" class="col-md-4">Product / Standards</label>
-              <input type="text" class="form-control col-md-4" id="search" placeholder="type here">
-              <button type="submit" class="btn btn-primary col-4">Search</button>
-            </div>
-        </form>
+    <div class="container-fluid row px-5 text-center my-5 py-5">
+        <div class="col-md-6">
+            <img src="{{ url('/media/codes-1697112570.gif')}}" alt="" class="">
+        </div>
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
         <h2>Latest Industry Notifications</h2>
