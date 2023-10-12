@@ -6,6 +6,7 @@ use App\Http\Controllers\site\SiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\site\SiteServicesController;
 use App\Http\Controllers\site\SiteProductsController;
+use App\Http\Controllers\site\SiteBlogsController;
 
 
 /*
@@ -30,7 +31,12 @@ Route::prefix('/')->group( function() {
     });
     Route::controller(SiteProductsController::class)->group(function(){
         Route::get('/products/{slug}', 'index')->name('site.products.index');
-        Route::get('/products/{slug}/{link?}', 'index')->name('site.products.index');
+        Route::get('/products/{slug}', 'index')->name('site.products.index');
+    });
+    Route::controller(SiteBlogsController::class)->group(function(){
+        Route::get('blogs', 'index')->name('site.blogs');
+        Route::get('/blogs/{category}', 'index')->name('site.blogs.sort');
+        Route::get('/blogs/{category}/{slug}', 'index')->name('site.blogs.single');
     });
 });
 

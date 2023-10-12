@@ -39,13 +39,13 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $blog->name}}</h5>
                 {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-                <a href="{{ url('blogs/'.$blog->slug) }}" class="btn btn-primary">Read More</a>
+                <a href="{{ route('site.blogs.single', [$blog->category,$blog->slug]) }}" class="btn btn-primary">Read More</a>
             </div>
             </div>
         </div>
         @endforeach
         @endif
-        <a href="{{ url('blogs/') }}" class="btn btn-primary text-center my-2">Read More</a>
+        <a href="{{ route('site.blogs') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
     <div class="section-3 row container-fluid px-5 text-center">
         <h2>What clients say?</h2>

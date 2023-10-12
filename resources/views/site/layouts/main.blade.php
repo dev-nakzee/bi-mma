@@ -156,8 +156,8 @@
           </ul>
           <h5 class="mt-4">Partner with us</h5>
           <ul class="nav flex-column">
-            {{-- <li class="nav-item"><a href="#">Become Service Partner</a></li>
-            <li class="nav-item"><a href="#">Become Channel Partner</a></li> --}}
+            <li class="nav-item"><a href="#">Become Service Partner</a></li>
+            <li class="nav-item"><a href="#">Become Channel Partner</a></li>
           </ul>
         </div>
         <div class="col-md-3">

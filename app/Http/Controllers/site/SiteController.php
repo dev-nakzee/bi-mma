@@ -17,8 +17,9 @@ class SiteController extends Controller
         ->join('media', 'services.media_id', '=','media.id')
         ->get();
         $testimonial = [];
-        $blogs = Blog::select('blogs.*', 'media.path as path')
-        ->join('media', 'blogs.image', 'media.id')
+        $blogs = Blog::select('blogs.*', 'media.path', 'blog_categories.name as category')
+        ->join('blog_categories', 'blogs.category_id','blog_categories.id')
+        ->join('media', 'blogs.image','media.id')
         ->limit(3)
         ->get();
         return view('site.home', compact('service', 'blogs', 'testimonial'));
