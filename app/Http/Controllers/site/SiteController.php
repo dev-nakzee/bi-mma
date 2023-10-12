@@ -24,4 +24,14 @@ class SiteController extends Controller
         ->get();
         return view('site.home', compact('service', 'blogs', 'testimonial'));
     }
+
+    public function about()
+    {
+
+    }
+
+    public function contact()
+    {
+        
+    }
 }

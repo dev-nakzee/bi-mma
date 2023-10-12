@@ -123,7 +123,6 @@
                     <button type="submit" class="btn btn-primary">Sign in</button>
                   </form>
                 </div>
-                <a href="{{ route('register') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user-plus"></i> Register</a>                 
                 <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
               </div>
           </div>

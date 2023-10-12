@@ -22,6 +22,7 @@ use App\Http\Controllers\site\SiteBlogsController;
 
 Route::controller(SiteController::class)->group(function(){
     Route::get('/', 'homepage')->name('site.home');
+    Route::get('/contact', 'contact')->name('site.contact');
 });
 
 Route::prefix('/')->group( function() {
