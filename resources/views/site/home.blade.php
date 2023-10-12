@@ -48,7 +48,7 @@ launch.
         @if($blogs)
         @foreach($blogs as $blog)
         <div class="col-md-4 p-3">
-        <div class="card blog-tiles">
+        <div class="card blog-tiles border border-secondary">
             <img src="{{ $blog->path }}" class="card-img-top" alt="{{ $blog->img_alt }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $blog->name}}</h5>
@@ -59,7 +59,7 @@ launch.
         </div>
         @endforeach
         @endif
-        <a href="{{ route('site.blogs') }}" class="btn btn-primary btn-sm col-md-3 text-center my-2">All blogs</a>
+        <a href="{{ route('site.blogs') }}" class="btn btn-secondary bg-orange btn-sm col-md-3 text-center my-2 mx-auto">All blogs</a>
     </div>
     <div class="section-3 row container-fluid px-5 text-center">
         <h2>What clients say?</h2>
@@ -81,7 +81,7 @@ launch.
         </div>
         @endforeach
         @endif
-        <a href="{{ route('site.clients') }}" class="btn btn-primary text-center my-2">Read More</a>
+        <a href="{{ route('site.clients') }}" class="btn btn-secondary bg-orange btn-sm col-md-3 text-center my-2 mx-auto">Read More</a>
     </div>
 @endsection
 @section('styles')
