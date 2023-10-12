@@ -29,13 +29,22 @@
             @endif
         </div>
     </div>
+    <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
+        <h2>Product List Which Needs Approval Before the Launch</h2>
+        <p>
+There are many products that need approval or certification before they can enter in the
+market for various compliance service categories like BIS, BEE, WPC-ETA, TEC and ISI. We&#39;ve
+compiled a comprehensive list of these products so that you can easily check the required
+certification for your products and make sure that they are compliant for a successful
+launch.
+        </p>
+    </div>
     <div class="section-3 row container-fluid px-5 text-center my-5">
         <h2>Stay updated with latest trends</h2>
-        <p>Our proven track record demonstrates our swift and efficient product certification
-            assistance, with satisfied clients sharing positive testimonials on our website. Our success
-            stories underscore our team&#39;s dedication and expertise in compliance management,
-            highlighting the positive outcomes we achieve for our valued clients and emphasizing our
-            commitment to industry excellence.</p>
+        <p>Our blogs are your one-stop destination for everything you need to know. Whether you
+            want information on the product certification process, the required documents or the
+            validity of any compliance service certificate, our informative blogs have covered you to
+            keep you updated with the industry trends.</p>
         @if($blogs)
         @foreach($blogs as $blog)
         <div class="col-md-4 p-3">
@@ -54,6 +63,11 @@
     </div>
     <div class="section-3 row container-fluid px-5 text-center">
         <h2>What clients say?</h2>
+        <p>Our proven track record demonstrates our swift and efficient product certification
+            assistance, with satisfied clients sharing positive testimonials on our website. Our success
+            stories underscore our team&#39;s dedication and expertise in compliance management,
+            highlighting the positive outcomes we achieve for our valued clients and emphasizing our
+            commitment to industry excellence.</p>
         <div class="container-fluid owl-carousel home-testimonial" id="owl-carousel">
             @if($testimonial)
             @foreach($testimonial as $test)
