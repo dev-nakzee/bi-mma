@@ -14,7 +14,7 @@
             @endif
         </ul>
     </div>
-    <div class="section-2 text-center p-5 my-3 text-grey shadow p-3 mb-5 bg-white rounded">
+    <div class="section-2 text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
         <div class="container-fluid row py-5 service-links">
             @if($service)
@@ -29,7 +29,7 @@
             @endif
         </div>
     </div>
-    <div class="section-2 text-center p-5 my-3 bg-orange text-grey">
+    <div class="section-2 text-center p-5 mb-3 bg-orange text-grey">
         <h2>Product List Which Needs Approval Before the Launch</h2>
         <p>
 There are many products that need approval or certification before they can enter in the
