@@ -46,6 +46,14 @@
         <div class="col-md-6">
             <img src="{{ url('/media/codes-1697112570.gif')}}" alt="" class="">
         </div>
+        <div class="col-md-6">
+            <h2>Latest Industry Notifications</h2>
+        <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
+            products with the required certifications and approvals. You can get the latest notifications
+            for all the compliance services on our website to ensure that your products meet regulatory
+            requirements. Our platform provides you with real-time notifications, so you&#39;ll never miss
+            important updates.</p>
+        </div>
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
         <h2>Latest Industry Notifications</h2>
