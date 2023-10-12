@@ -60,6 +60,8 @@
 <li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
 <li>Aliquam eget turpis ut magna pretium egestas.</li>
 <li>Nunc tristique sem id nisi aliquet porttitor et ut turpis.</li>
+        </ul>
+        <ul style="list-style-image: url({{asset('asset/site/images/services/check-mark-50.png')}});">
 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 <li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
 <li>Aliquam eget turpis ut magna pretium egestas.</li>
