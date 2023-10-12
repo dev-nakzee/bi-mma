@@ -55,7 +55,7 @@
     </div>
     <div class="container-fluid row px-5my-5 py-5 bg-grey-light">
         <h2 class="text-center">About services text</h2>
-        <ul>
+        <ul style="list-style-image: url({{asset('asset/site/images/services/check-mark-50.png')}});">
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 <li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
 <li>Aliquam eget turpis ut magna pretium egestas.</li>
