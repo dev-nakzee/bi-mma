@@ -53,8 +53,8 @@
             Pellentesque tortor augue, luctus quis elit eu, tempor molestie ante. Donec rutrum elit ipsum, in convallis enim ullamcorper vel. Aliquam aliquet facilisis maximus. Proin dapibus fermentum iaculis. Etiam volutpat porta eros a tristique. Vivamus eget feugiat leo, et egestas felis. Quisque at elementum sapien, ut volutpat ipsum. Aliquam in mollis tellus. Praesent ultrices nisl et dolor lacinia posuere. Cras mattis scelerisque lectus id venenatis. Nam laoreet dui id tellus dictum tristique vitae sit amet quam. Nunc ac quam ac ex finibus dignissim quis nec lorem. Nam quis felis sed lacus sagittis tristique. </p>
         </div>
     </div>
-    <div class="container-fluid row px-5my-5 py-5 bg-grey-light">
-        <h2 class="text-center">About services text</h2>
+    <div class="container-fluid row px-5 my-5 py-5 bg-grey-light">
+        <h2 class="text-center">Advantages</h2>
         <ul style="list-style-image: url({{asset('asset/site/images/services/check-mark-50.png')}});">
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 <li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
