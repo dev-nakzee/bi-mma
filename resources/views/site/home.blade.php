@@ -59,7 +59,7 @@ launch.
         </div>
         @endforeach
         @endif
-        <a href="{{ route('site.blogs') }}" class="btn btn-primary text-center my-2">Read More</a>
+        <a href="{{ route('site.blogs') }}" class="btn btn-primary btn-sm col-md-3 text-center my-2">All blogs</a>
     </div>
     <div class="section-3 row container-fluid px-5 text-center">
         <h2>What clients say?</h2>
