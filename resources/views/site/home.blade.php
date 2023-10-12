@@ -83,8 +83,6 @@ launch.
         @endif
         <a href="{{ route('site.clients') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
-@section('enquiry')
-@endsection
 @endsection
 @section('styles')
 <style>
