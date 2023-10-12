@@ -28,6 +28,10 @@ body {
 .bg-orange {
     background-color: #fd7e14;
 }
+.orange {
+    color: #fd7e14;
+	text-decoration: none;
+}
 .bg-grey-light {
     background-color: #eee;
 }
@@ -92,7 +96,13 @@ body {
     padding: 0.5em;
     box-shadow: 2px 2px 20px #4e4e4e;
 }
-
+.standard-pill {
+	background-color: #e7b388;
+	padding: 5px 25px;
+	font-size: 14px;
+	border-radius: 10px;
+	font-weight: bold;
+}
 .services-pages {
 	overflow-x: hidden;
 }
@@ -144,6 +154,31 @@ body {
 }
 .service-info-container div  {
 	min-height: 500px;
+}
+.product-info-container {
+	max-height: 500px !important;
+	min-height: 500px;
+	overflow-y: scroll;
+}
+.product-info-container::-webkit-scrollbar {
+	width: 1px;               /* width of the entire scrollbar */
+}
+  
+.product-info-container::-webkit-scrollbar-track {
+	background: transparent;        /* color of the tracking area */
+}
+  
+.product-info-container::-webkit-scrollbar-thumb {
+	background-color: #fd7e14;    /* color of the scroll thumb */
+}
+.product-info-container div.section {
+	min-height: 500px;
+}
+
+.service-link {
+	text-decoration: none;
+	font: bold 14px 'Roboto', sans-serif;
+	color: #fd7e14;
 }
 .product-image {
 	width: 100%;

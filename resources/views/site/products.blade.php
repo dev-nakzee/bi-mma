@@ -24,26 +24,62 @@
             <div class="col-md-3 bg-white border-rounded" id="sidebar-products">
                 <div id="service-details" class="list-group">
                     <a class="list-group-item list-group-item-action action-url" href="#about-product">About Product</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#required-documentation">Documents Required</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#registration-process">Registration Process</a>
                     <a class="list-group-item list-group-item-action action-url" href="#download-info-guidelines">Download Info & Guideline</a>
                     <a class="list-group-item list-group-item-action action-url" href="#industry-notifications">Industry Notification</a>
                 </div>
             </div>
-            <div class="col-md-9 ps-5 service-info-container float-right" data-bs-spy="scroll" data-bs-target="#service-details" data-bs-smooth-scroll="true" tabindex="0">
-                <div class="about-section row" id="product-details">
+            <div class="col-md-9 ps-5 product-info-container float-right" data-bs-spy="scroll" data-bs-target="#service-details" data-bs-smooth-scroll="true" tabindex="0">
+                <div class="about-section row section" id="about-product">
                     <div class="col-md-4">
                         <img class="product-image" src="{{ $media->path }}" alt="{{ $products->img_alt }}">
                     </div>
                     <div class="col-md-8">
-                        <h2 class="">{{$products->product}}</h2>
+                        <h2 class="orange">{{$products->product}}</h2>
+                        <div class="container my-3">
+                            <span class="standard-pill">{{$products->standards}}</span>
+                        </div>
+                        <hr>
+                        <div class="container mt-2">
                         @if($services)
                         @foreach($services as $service)
-                        <a href="{{ route('site.services.index', $service->slug)}}">{{ $service->service }}</a>
+                        <a class="text-center p-2 d-inline-block orange border border-secondary rounded rounded-lg" href="{{ route('site.services.index', $service->slug)}}"><img src="{{ $service->path }}"><br>{{$service->service}}</a>
                         @endforeach
                         @endif
-                        {!! $products->description !!}
+                        </div>
                     </div>
+                    <div class="col-md-12">{!! $products->description !!}</div>
                 </div>
-                <div class="guidelines-section" id="download-info-guidelines">
+                <div class="required-documentation section" id="required-documentation">
+                    @if($services)
+                    @foreach($services as $service)
+                    <h4>
+                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
+                            Documents Required for {{$service->service}}
+                        </span>
+                    </h4>
+                    <div>
+                        {!! $service->documents!!}
+                    </div>
+                    @endforeach
+                    @endif
+                </div>
+                <div class="registration-process section" id="registration-process">
+                    @if($services)
+                    @foreach($services as $service)
+                    <h4>
+                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
+                            {{$service->service}} Registration Process for {{$products->product}}
+                        </span>
+                    </h4>
+                    <div>
+                        {!! $service->process!!}
+                    </div>
+                    @endforeach
+                    @endif
+                </div>
+                <div class="guidelines-section section" id="download-info-guidelines">
                     <h4>
                         <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
                             Download Info & Guidelines
@@ -53,7 +89,7 @@
 
                     </div>
                 </div>
-                <div class="notification-section" id="industry-notifications">
+                <div class="notification-section section" id="industry-notifications">
                     <h4>
                         <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
                             Industry Notification

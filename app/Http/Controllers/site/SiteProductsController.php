@@ -23,8 +23,9 @@ class SiteProductsController extends Controller
         ->first();
         $media = Media::where('id', $products->img_id)->first();
         $pid = $products->id;
-        $services = ProdServMap::select('services.*')
+        $services = ProdServMap::select('services.*', 'media.path')
         ->join('services', 'prod_serv_maps.service_id','services.id')
+        ->join('media', 'services.media_id','media.id')
         ->where('product_id', $pid)
         ->get();
         return view('site.products', compact('services','products','media'));
