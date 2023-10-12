@@ -95,7 +95,7 @@
                       </div>
                     </li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('site.blogs')}}">Blogs</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('site.contact')}}">Contact</a></li>
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
