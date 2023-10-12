@@ -39,7 +39,7 @@ certification for your products and make sure that they are compliant for a succ
 launch.
         </p>
     </div>
-    <div class="section-3 row container-fluid px-5 text-center">
+    <div class="section-3 row container-fluid px-5 text-center mt-4">
         <h2>Latest Industry Notifications</h2>
         <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
             products with the required certifications and approvals. You can get the latest notifications
