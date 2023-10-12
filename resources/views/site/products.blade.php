@@ -30,10 +30,10 @@
             </div>
             <div class="col-md-9 ps-5 service-info-container float-right" data-bs-spy="scroll" data-bs-target="#service-details" data-bs-smooth-scroll="true" tabindex="0">
                 <div class="about-section row" id="product-details">
-                    <div class="col-md-6" style="border: 1px solid #666;">
+                    <div class="col-md-4">
                         <img class="product-image" src="{{ $media->path }}" alt="{{ $products->img_alt }}">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h2 class="">{{$products->product}}</h2>
                         @if($services)
                         @foreach($services as $service)
