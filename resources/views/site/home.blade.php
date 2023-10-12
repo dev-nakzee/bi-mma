@@ -47,12 +47,10 @@
             <img src="{{ url('/media/codes-1697112570.gif')}}" alt="" class="">
         </div>
         <div class="col-md-6">
-            <h2>Latest Industry Notifications</h2>
-        <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
-            products with the required certifications and approvals. You can get the latest notifications
-            for all the compliance services on our website to ensure that your products meet regulatory
-            requirements. Our platform provides you with real-time notifications, so you&#39;ll never miss
-            important updates.</p>
+            <h2>About services text</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla leo arcu, ut aliquet augue fermentum at. Curabitur ornare facilisis sollicitudin. Mauris luctus laoreet dictum. Aliquam viverra vestibulum sapien vel varius. Praesent tincidunt rutrum ante, consectetur aliquam nisi lacinia a. Etiam est odio, efficitur a eros vel, porta rutrum ex. Vivamus ultrices tristique tristique.
+
+            Pellentesque tortor augue, luctus quis elit eu, tempor molestie ante. Donec rutrum elit ipsum, in convallis enim ullamcorper vel. Aliquam aliquet facilisis maximus. Proin dapibus fermentum iaculis. Etiam volutpat porta eros a tristique. Vivamus eget feugiat leo, et egestas felis. Quisque at elementum sapien, ut volutpat ipsum. Aliquam in mollis tellus. Praesent ultrices nisl et dolor lacinia posuere. Cras mattis scelerisque lectus id venenatis. Nam laoreet dui id tellus dictum tristique vitae sit amet quam. Nunc ac quam ac ex finibus dignissim quis nec lorem. Nam quis felis sed lacus sagittis tristique. </p>
         </div>
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
