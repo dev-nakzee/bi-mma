@@ -31,6 +31,11 @@
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5">
         <h2>Stay updated with latest trends</h2>
+        <p>Our proven track record demonstrates our swift and efficient product certification
+            assistance, with satisfied clients sharing positive testimonials on our website. Our success
+            stories underscore our team&#39;s dedication and expertise in compliance management,
+            highlighting the positive outcomes we achieve for our valued clients and emphasizing our
+            commitment to industry excellence.</p>
         @if($blogs)
         @foreach($blogs as $blog)
         <div class="col-md-4 p-3">
