@@ -14,7 +14,7 @@
             @endif
         </ul>
     </div>
-    <div class="section-2 text-center p-5 my-3 bg-grey-light text-grey">
+    <div class="section-2 text-center p-5 my-3 bg-orange text-grey">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
         <div class="container-fluid row py-5 service-links">
             @if($service)
