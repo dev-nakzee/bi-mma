@@ -73,7 +73,7 @@ launch.
         @foreach($testimonials as $t)
         <div class="col-md-3 p-2">
             <div class="client-testimonials border border-primary rounded p-3">
-            <img src="{{ $t->path }}" class="d-block w-100 rounded" alt="{{ $t->client.'-testimonial' }}">
+            <img src="{{ $t->path }}" class="d-block w-100 rounded-circle" alt="{{ $t->client.'-testimonial' }}">
             <h3>{{ $t->client }}</h3>
             <h3>{{ $t->position }}</h3>
             <p>{{ $t->description }}</p>
