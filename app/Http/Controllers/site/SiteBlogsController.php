@@ -11,9 +11,10 @@ class SiteBlogsController extends Controller
 {
     //
     public function index() {
-        $blog = Blog::select('blogs.*', 'media.path', 'blog_categories.name')
+        $blog = Blog::select('blogs.*', 'media.path', 'blog_categories.name as category')
         ->join('blog_categories', 'blogs.category_id','blog_categories.id')
         ->join('media', 'blogs.image','media.id')
+        ->limit(3)
         ->get();
         $blogCategory = BlogCategory::get();
         return view('site.blogs', compact('blog', 'blogCategory'));
