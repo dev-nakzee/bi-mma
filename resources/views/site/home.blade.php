@@ -42,7 +42,7 @@
             @endif
         </div>
     </div>
-    <div class="container-fluid row px-5my-5 py-5">
+    <div class="container-fluid row px-5my-5 py-5 bg-orange">
         <div class="col-md-6 text-center">
             <img src="{{ url('/media/codes-1697112570.gif')}}" alt="" class="rounded">
         </div>
