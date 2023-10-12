@@ -53,6 +53,19 @@
             Pellentesque tortor augue, luctus quis elit eu, tempor molestie ante. Donec rutrum elit ipsum, in convallis enim ullamcorper vel. Aliquam aliquet facilisis maximus. Proin dapibus fermentum iaculis. Etiam volutpat porta eros a tristique. Vivamus eget feugiat leo, et egestas felis. Quisque at elementum sapien, ut volutpat ipsum. Aliquam in mollis tellus. Praesent ultrices nisl et dolor lacinia posuere. Cras mattis scelerisque lectus id venenatis. Nam laoreet dui id tellus dictum tristique vitae sit amet quam. Nunc ac quam ac ex finibus dignissim quis nec lorem. Nam quis felis sed lacus sagittis tristique. </p>
         </div>
     </div>
+    <div class="container-fluid row px-5my-5 py-5 bg-orange">
+        <h2>About services text</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
+<li>Aliquam eget turpis ut magna pretium egestas.</li>
+<li>Nunc tristique sem id nisi aliquet porttitor et ut turpis.</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
+<li>Aliquam eget turpis ut magna pretium egestas.</li>
+<li>Nunc tristique sem id nisi aliquet porttitor et ut turpis.</li>
+        </ul>
+    </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
         <h2>Latest Industry Notifications</h2>
         <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
