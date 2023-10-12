@@ -64,7 +64,7 @@
             Dropzone.options.fileUpload = {
                 maxFiles: 1,
                 paramName: "file", // Name of the input field (file upload)
-                maxFilesize: 2, // Max file size in MB
+                maxFilesize: 10, // Max file size in MB
                 acceptedFiles: ".jpg, .jpeg, .png, .pdf", // Allowed file types
             };
             
