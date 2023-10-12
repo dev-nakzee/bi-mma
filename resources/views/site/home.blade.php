@@ -38,12 +38,12 @@ compiled a comprehensive list of these products so that you can easily check the
 certification for your products and make sure that they are compliant for a successful
 launch.
         </p>
-        <form class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
+        <form class="form-inline row">
+            <div class="form-group mx-3 mb-2 col-8">
               <label for="inputPassword2" class="sr-only">Search</label>
               <input type="text" class="form-control" id="search" placeholder="type here">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Search</button>
+            <button type="submit" class="btn btn-primary mb-2 col-4">Search</button>
           </form>
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
