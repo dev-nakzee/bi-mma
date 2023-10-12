@@ -4,7 +4,20 @@
     <div class="container-fluid home-banner p-5">
         <h1 class="">Launch Your Product In India?</h1>
         <p class="mb-5">Get your Product Approval to Sell it in India Fast & Economical way</p>
-        <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
+        <form class="col-md-6" id="search-form" method="POST" action="{{ route('site.search')}}">
+        <div class="input-group">
+            <input type="text" class="form-control" name="search-text" placeholder="Type services &amp; products" aria-label="" aria-describedby="search-btn">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="search-btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+        </div>
+        </form>
+        <div class="bg-dark col-md-6 d-none" id="suggestions">
+
+        </div>
+        {{-- <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
             @if($service)
             @foreach($service as $s)
             <li>
@@ -12,7 +25,7 @@
             </li>
             @endforeach
             @endif
-        </ul>
+        </ul> --}}
     </div>
     <div class="section-2 text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
@@ -122,53 +135,12 @@ launch.
     </div>
 @endsection
 @section('styles')
-<style>
-    .home-banner {
-      /* The image used */
-      background-image: url({{ asset('assets/site/images/bg2.png')}});
-      /* Set a specific height */
-      min-height: 500px;
-      /* Create the parallax scrolling effect */
-      /* background-attachment: fixed; */
-      background-position: top right;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    @media only screen and (max-device-width: 960px) {
-        .home-banner {
-            background-attachment: scroll;
-        }
-    }
-    .service-icon li::before {
-        content: url({{ asset('assets/site/images/services/check-mark-50.png')}}) !important;
-        position: absolute;
-        z-index: 1;
-        width: 70px;
-        overflow: visible !important;
-        left: 40px;
-        top: 44px;
-        height: 70px;
-    
-    }
-    </style>
-    <link rel="stylesheet" href="{{asset('assets/site/owl-slider/assets/owl.carousel.min.css')}}">
-<link rel="stylesheet" href="{{asset('assets/site/owl-slider/assets/owl.theme.default.min.css')}}">
+
 @endsection
 @section('scripts')
-<script src="{{asset('assets/site/owl-slider/owl.carousel.min.js')}}"></script>
 <script>
-    $(document).ready(function(){
-        $("#owl-carousel").owlCarousel({
-            center: true,
-            items:2,
-            loop:false,
-            margin:10,
-            responsive:{
-                600:{
-                    items:4
-                }
-            }
-        });
-    });
+$('#search-form').on('click', function(e){
+    $(this).preventDefault();
+});
 </script>
 @endsection

@@ -42,4 +42,8 @@ class SiteController extends Controller
     {
         
     }
+    public function find($text=null)
+    {
+        
+    }
 }

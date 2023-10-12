@@ -24,6 +24,7 @@ Route::controller(SiteController::class)->group(function(){
     Route::get('/', 'homepage')->name('site.home');
     Route::get('/contact', 'contact')->name('site.contact');
     Route::get('/clients', 'clients')->name('site.clients');
+    Route::post('/search', 'find')->name('site.search');
 });
 
 Route::prefix('/')->group( function() {
