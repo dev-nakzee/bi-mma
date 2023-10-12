@@ -38,8 +38,15 @@ compiled a comprehensive list of these products so that you can easily check the
 certification for your products and make sure that they are compliant for a successful
 launch.
         </p>
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputPassword2" class="sr-only">Search</label>
+              <input type="text" class="form-control" id="search" placeholder="type here">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+          </form>
     </div>
-    <div class="section-3 row container-fluid px-5 text-center mt-4">
+    <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
         <h2>Latest Industry Notifications</h2>
         <p>Staying updated with the latest notifications is essential to maintain the eligibility of your
             products with the required certifications and approvals. You can get the latest notifications
