@@ -68,30 +68,20 @@ launch.
             stories underscore our team&#39;s dedication and expertise in compliance management,
             highlighting the positive outcomes we achieve for our valued clients and emphasizing our
             commitment to industry excellence.</p>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  @if($testimonials)
-                    @foreach($testimonials as $t)
-                    <div class="carousel-item">
-                        <img src="{{ $t->path}}" class="d-block w-100" alt="...">
-                    </div>
-                    @endforeach
-                  @endif
-                </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </button>
-              </div>
+
+        @if($testimonials)
+        @foreach($testimonials as $t)
+        <div class="col-md-3 p-2">
+            <div class="client-testimonials border border-primary rounded p-3">
+            <img src="{{ $t->path }}" class="d-block w-100" alt="{{ $t->client.'-testimonial' }}">
+            <h3>{{ $t->client }}</h3>
+            <h3>{{ $t->position }}</h3>
+            <p>{{ $t->description }}</p>
+            </div>
+        </div>
+        @endforeach
+        @endif
+        <a href="{{ route('site.clients') }}" class="btn btn-primary text-center my-2">Read More</a>
     </div>
 @section('enquiry')
 @endsection
