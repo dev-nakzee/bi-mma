@@ -145,6 +145,9 @@ body {
 .service-info-container div  {
 	min-height: 500px;
 }
+.product-image {
+	width: 100%;
+}
 
 @media all and (min-width: 992px) {
 	.dropdown-menu {

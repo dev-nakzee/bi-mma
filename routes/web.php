@@ -35,8 +35,8 @@ Route::prefix('/')->group( function() {
     });
     Route::controller(SiteBlogsController::class)->group(function(){
         Route::get('blogs', 'index')->name('site.blogs');
-        Route::get('/blogs/{category}', 'index')->name('site.blogs.sort');
-        Route::get('/blogs/{category}/{slug}', 'index')->name('site.blogs.single');
+        Route::get('/blogs/{category}', 'category')->name('site.blogs.sort');
+        Route::get('/blogs/{category}/{slug}', 'single')->name('site.blogs.single');
     });
 });
 
