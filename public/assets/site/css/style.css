@@ -131,7 +131,12 @@ body {
 	margin-bottom: 14px;
 	background-color: transparent;
 }
-
+.btn-primary {
+	background-color: #0e4193 !important;
+}
+a {
+	text-decoration: none;
+}
 .footer {
 	background: #007bff;
 	color: #fff !important;
