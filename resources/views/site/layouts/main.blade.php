@@ -41,7 +41,7 @@
     @yield('styles')
     <link href="{{ asset('assets/site/css/style.css')}}" rel="stylesheet">
   </head>
-  <body class="px-5">
+  <body>
       <div class="container-fuild">
           <div class="col-12 bg-dark p-1 top-bar">
             <a class="text-light ms-3" href="#"><i class="fa-light fa-globe"></i> Click for global enquiries</a>
