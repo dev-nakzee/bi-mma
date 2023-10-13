@@ -27,6 +27,11 @@ Route::controller(SiteController::class)->group(function(){
     Route::post('/search', 'find')->name('site.search');
 });
 
+Route::controller(PdfBrochureController::class)->group(function(){
+    Route::get('/reload-captcha', 'reloadCaptcha')->name('site.reload.captcha');
+    Route::post('/get-brochure', 'store')->name('site.brochure.store');
+});
+
 Route::prefix('/')->group( function() {
     Route::controller(SiteServicesController::class)->group(function(){
         Route::get('/services/{slug}', 'index')->name('site.services.index');

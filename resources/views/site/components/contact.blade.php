@@ -25,7 +25,12 @@
                     <input type="text" class="form-control" placeholder="Country">
                 </div>
                 <div class="col-md-6">
-                    
+                    <div class="captcha">
+                        <span>{!! captcha_img() !!}</span>
+                        <button type="button" class="btn btn-danger" class="reload" id="reload">
+                            &#x21bb;
+                        </button>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <input type="text" class="form-control" placeholder="captcha">
@@ -34,3 +39,14 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    $('#reload').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'reload-captcha',
+            success: function (data) {
+                $(".captcha span").html(data.captcha);
+            }
+        });
+    });
+</script>
