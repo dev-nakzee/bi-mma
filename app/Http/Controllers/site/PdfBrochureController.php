@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Enquiry;
+use PDF;
 
 class PdfBrochureController extends Controller
 {
@@ -42,9 +43,7 @@ class PdfBrochureController extends Controller
             'country' =>'required',
             'captcha' =>'required|captcha',
         ]);
-        if(!$validator) {
-            
-        }
+        return response()->json([$request->all()]);
     }
 
     public function reloadCaptcha()

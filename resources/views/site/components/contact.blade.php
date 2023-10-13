@@ -300,22 +300,19 @@
 <script type="text/javascript">
     $('#brochureForm').on('submit',function (e) {
         e.preventDefault();
-        let formData = new FormData(this);
+        var url = {{route('site.brochure.store')}};
+        $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
         $.ajax({
                 type:'POST',
-                url: {{route('site.brochure.store')}},
-                data: formData,
-                contentType: false,
-                processData: false,
+                url: url,
+                data: $('#brochureForm').serialize(),
+                dataType: 'JSON',
                 success: (response) => {
                     alert('Form submitted successfully');
-                },
-                error: function(response){
-                    $('#ajax-form').find(".print-error-msg").find("ul").html('');
-                    $('#ajax-form').find(".print-error-msg").css('display','block');
-                    $.each( response.responseJSON.errors, function( key, value ) {
-                        $('#ajax-form').find(".print-error-msg").find("ul").append('<li>'+value+'</li>');
-                    });
                 }
            });
 });
