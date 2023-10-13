@@ -48,7 +48,7 @@
             <a class="text-light me-2 float-end" href="tel:123-456-7890"><i class="fa fa-phone"></i> 123-456-7890</a>
             <a class="text-light me-3 float-end" href = "mailto:abc@example.com"><i class="fa fa-envelope"></i> abc@example.com</a>
           </div>
-          <div class="col-12 row bg-light px-2">
+          <div class="col-12 row bg-light px-5">
             <div class="col-3"> 
               <a href="{{ route('site.home')}}"><img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/></a>
             </div>
