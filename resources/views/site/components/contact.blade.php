@@ -21,22 +21,11 @@
                 <div class="col-md-6 my-2">
                     <select class="form-control" placeholder="Select service" name="service">
                         <option>Certification</option>
-                        <option value="BIS Registration - Foreign Manufacturer">BIS Registration - Foreign Manufacturer</option>
-                        <option value="BIS Registration - Indian Manufacturer">BIS Registration - Indian Manufacturer</option>
-                        <option value="WPC Approval - Foreign Manufacturer">WPC Approval - Foreign Manufacturer</option>
-                        <option value="WPC Approval - Indian Manufacturer">WPC Approval - Indian Manufacturer</option>
-                        <option value="ISI Certification - Foreign Manufacturer">ISI Certification - Foreign Manufacturer</option>
-                        <option value="ISI Certification - Indian Manufacturer">ISI Certification - Indian Manufacturer</option>
-                        <option value="BEE Registration - Foreign Manufacturer">BEE Registration - Foreign Manufacturer</option>
-                        <option value="BEE Registration - Indian Manufacturer">BEE Registration - Indian Manufacturer</option>
-                        <option value="TEC Certification - Foreign Manufacturer">TEC Certification - Foreign Manufacturer</option>
-                        <option value="TEC Certification - Indian Manufacturer">TEC Certification - Indian Manufacturer</option>
-                        <option value="EPR Authorization - E-waste Approval">EPR Authorization - E-waste Approval</option>
-                        <option value="EPR Authorization - P-waste Approval">EPR Authorization - P-waste Approval</option>
-                        <option value="EPR - Battery Waste Management">EPR - Battery Waste Management</option>
-                        <option value="Trademark">Trademark</option>
-                        <option value="Copyright">Copyright</option>
-                        <option value="Patent">Patent</option>
+                        @if($services)
+                        @foreach($services as $service)
+                        <option value="{{ $service->id }}">{{ $service->service }}</option>
+                        @endforeach
+                        @endif
                     </select>
                 </div>
                 <div class="col-md-6 my-2">
