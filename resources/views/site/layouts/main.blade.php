@@ -129,8 +129,9 @@
       </nav>
 
     <!-- Ends -->
-
-    @yield('content')
+      <div class="container-fluid px-0">
+      @yield('content')
+      </div>
     @include('site.components.contact')
     <div class="container-fluid footer px-4">
       <div class="row pt-5 pb-5 ">

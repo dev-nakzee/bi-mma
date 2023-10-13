@@ -131,6 +131,11 @@ body {
 	margin-bottom: 14px;
 	background-color: transparent;
 }
+.home-sections {
+	width: 100% !important;
+	
+}
+
 .btn-primary {
 	background-color: #0e4193 !important;
 }

@@ -35,7 +35,7 @@
             </li>
         </ul>
     </div>
-    <div class="section-2 container text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
+    <div class="section-2 home-sections text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
         <div class="container-fluid row py-5 service-links">
             @if($service)
