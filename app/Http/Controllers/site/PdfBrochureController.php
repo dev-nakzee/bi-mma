@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Enquiry;
 
 class PdfBrochureController extends Controller
 {
@@ -29,14 +30,14 @@ class PdfBrochureController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         //
         $request->validate([
-            'first_name' =>'required',
-            'last_name' =>'required',
-            'email' =>'required|email',
-            'phone' =>'required',
+            'first_name' =>['required'],
+            'last_name' =>['required'],
+            'email' =>['required', 'email', 'unique:'. Enquiry::class],
+            'phone' =>['required', 'numeric', 'unique:'. Enquiry::class],
             'service' =>'required',
             'country' =>'required',
             'captcha' =>'required|captcha',
