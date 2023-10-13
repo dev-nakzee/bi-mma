@@ -14,7 +14,7 @@
             </div>
         </div>
         </form>
-        <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
+        <ul class="container-fluid mt-5 pt-5 ps-0 service-icon">
             <li>
                 <img src="{{ asset('assets/site/images/services/serviceicon1.png') }}">
             </li>
@@ -35,7 +35,7 @@
             </li>
         </ul>
     </div>
-    <div class="section-2 text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
+    <div class="section-2 container text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
         <div class="container-fluid row py-5 service-links">
             @if($service)
