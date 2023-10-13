@@ -39,14 +39,3 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">
-    $('#reload').on('click',function () {
-        $.ajax({
-            type: 'GET',
-            url: 'reload-captcha',
-            success: function (data) {
-                $(".captcha span").html(data.captcha);
-            }
-        });
-    });
-</script>
