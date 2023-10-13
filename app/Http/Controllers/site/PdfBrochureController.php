@@ -33,7 +33,7 @@ class PdfBrochureController extends Controller
     public function store(Request $request): JsonResponse
     {
         //
-        $request->validate([
+        $validator = $request->validate([
             'first_name' =>['required'],
             'last_name' =>['required'],
             'email' =>['required', 'email', 'unique:'. Enquiry::class],
@@ -42,6 +42,9 @@ class PdfBrochureController extends Controller
             'country' =>'required',
             'captcha' =>'required|captcha',
         ]);
+        if(!$validator) {
+            
+        }
     }
 
     public function reloadCaptcha()
