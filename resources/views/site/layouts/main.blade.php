@@ -41,7 +41,7 @@
     @yield('styles')
     <link href="{{ asset('assets/site/css/style.css')}}" rel="stylesheet">
   </head>
-  <body>
+  <body class="px-5">
       <div class="container-fuild">
           <div class="col-12 bg-dark p-1 top-bar">
             <a class="text-light ms-3" href="#"><i class="fa-light fa-globe"></i> Click for global enquiries</a>
@@ -59,7 +59,7 @@
           </div>
       </div>
       <!-- Menu -->
-      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg">
+      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg px-5">
           <div class="container-fluid">
               <div class="navbar-brand">
                 <img src="{{ asset('assets/site/images/MakeMyApproval-logo-black.png') }}" id="site-logo-sticky" class="img-responsive site-logo-sticky d-none"/>
