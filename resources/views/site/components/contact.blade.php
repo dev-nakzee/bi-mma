@@ -297,4 +297,27 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    $('#brochureForm').on('submit',function (e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        $.ajax({
+                type:'POST',
+                url: {{route('site.brochure.store')}},
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: (response) => {
+                    alert('Form submitted successfully');
+                },
+                error: function(response){
+                    $('#ajax-form').find(".print-error-msg").find("ul").html('');
+                    $('#ajax-form').find(".print-error-msg").css('display','block');
+                    $.each( response.responseJSON.errors, function( key, value ) {
+                        $('#ajax-form').find(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+                    });
+                }
+           });
+});
 
+</script>
