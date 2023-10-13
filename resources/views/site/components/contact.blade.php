@@ -40,7 +40,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('#reload').click(function () {
+    $('#reload').on('click',function () {
         $.ajax({
             type: 'GET',
             url: 'reload-captcha',
