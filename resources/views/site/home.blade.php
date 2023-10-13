@@ -8,7 +8,7 @@
         <div class="input-group">
             <input type="text" class="form-control" name="search-text" placeholder="Type services &amp; products" aria-label="" aria-describedby="search-btn">
             <div class="input-group-append">
-              <button class="btn btn-secondary" type="submit" id="search-btn">
+              <button class="btn btn-primary" type="submit" id="search-btn">
                 <i class="fa fa-search"></i>
               </button>
             </div>
