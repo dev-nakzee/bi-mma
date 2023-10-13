@@ -4,7 +4,7 @@
     </div>
     <div class="col-md-6">
         <h3>Get brochure for free</h3>
-        <form class="" action="">
+        <form class="" action="" id="brochureForm">
             <div class="form-row row">
                 <div class="col-md-6 my-2">
                   <input type="text" class="form-control" placeholder="First name" name="first_name">
@@ -296,3 +296,4 @@
         </form>
     </div>
 </div>
+
