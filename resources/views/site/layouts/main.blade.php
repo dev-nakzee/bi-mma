@@ -59,7 +59,7 @@
           </div>
       </div>
       <!-- Menu -->
-      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange">
+      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg">
           <div class="container-fluid">
               <div class="navbar-brand">
                 <img src="{{ asset('assets/site/images/MakeMyApproval-logo-black.png') }}" id="site-logo-sticky" class="img-responsive site-logo-sticky d-none"/>

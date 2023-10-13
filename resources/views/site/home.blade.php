@@ -8,7 +8,7 @@
         <div class="input-group">
             <input type="text" class="form-control" name="search-text" placeholder="Type services &amp; products" aria-label="" aria-describedby="search-btn">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="submit" id="search-btn">
+              <button class="btn btn-secondary" type="submit" id="search-btn">
                 <i class="fa fa-search"></i>
               </button>
             </div>
@@ -17,15 +17,6 @@
         <div class="bg-dark col-md-6 d-none" id="suggestions">
 
         </div>
-        {{-- <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
-            @if($service)
-            @foreach($service as $s)
-            <li>
-                <img src="{{ $s->path }}" alt="{{ $s->img_alt }}">
-            </li>
-            @endforeach
-            @endif
-        </ul> --}}
     </div>
     <div class="section-2 text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>

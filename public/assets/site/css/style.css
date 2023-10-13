@@ -46,6 +46,14 @@ body {
 	text-decoration: none;
 	color: #000;
 }
+.home-banner {
+	height: 500px;
+	background: hsl(27, 100%, 74%);
+	background-image: url('../images/mma-banner1.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right;
+}
 .advantage-icons i {
 	font-size: 75px;
 }
