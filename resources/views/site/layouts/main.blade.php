@@ -131,7 +131,7 @@
     <!-- Ends -->
 
     @yield('content')
-
+    @include('site.components.contact')
     <div class="container-fluid footer px-4">
       <div class="row pt-5 pb-5 ">
         <div class="col-md-3">

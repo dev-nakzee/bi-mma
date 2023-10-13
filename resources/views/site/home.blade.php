@@ -53,20 +53,32 @@
             Pellentesque tortor augue, luctus quis elit eu, tempor molestie ante. Donec rutrum elit ipsum, in convallis enim ullamcorper vel. Aliquam aliquet facilisis maximus. Proin dapibus fermentum iaculis. Etiam volutpat porta eros a tristique. Vivamus eget feugiat leo, et egestas felis. Quisque at elementum sapien, ut volutpat ipsum. Aliquam in mollis tellus. Praesent ultrices nisl et dolor lacinia posuere. Cras mattis scelerisque lectus id venenatis. Nam laoreet dui id tellus dictum tristique vitae sit amet quam. Nunc ac quam ac ex finibus dignissim quis nec lorem. Nam quis felis sed lacus sagittis tristique. </p>
         </div>
     </div>
-    <div class="container-fluid row px-5 my-5 py-5 pl-5 bg-grey-light">
-        <h2 class="text-center">Advantages</h2>
-        <ul class="col-md-6" style="list-style-image: url({{asset('asset/site/images/services/check-mark-50.png')}});">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-<li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
-<li>Aliquam eget turpis ut magna pretium egestas.</li>
-<li>Nunc tristique sem id nisi aliquet porttitor et ut turpis.</li>
-        </ul>
-        <ul class="col-md-6" style="list-style-image: url({{asset('asset/site/images/services/check-mark-50.png')}});">
-<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-<li>Nunc at diam sodales, cursus nisl id, pretium sem.</li>
-<li>Aliquam eget turpis ut magna pretium egestas.</li>
-<li>Nunc tristique sem id nisi aliquet porttitor et ut turpis.</li>
-        </ul>
+    <div class="container-fluid row px-5 py-5 bg-grey-light text-center">
+        <h2 class="pt-5">Advantages</h2>
+        <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla leo arcu, ut aliquet augue fermentum at. Curabitur ornare facilisis sollicitudin. Mauris luctus laoreet dictum. Aliquam viverra vestibulum sapien vel varius. Praesent tincidunt rutrum ante, consectetur aliquam nisi lacinia a. Etiam est odio, efficitur a eros vel, porta rutrum ex. Vivamus ultrices tristique tristique.</p>
+        <div class="col-md-3 advantage-icons p-2 mb-3">
+            <i class="fa-light fa-file-certificate"></i>
+            <h5 class="my-3">Comprehensive Cetification</h5>
+        </div>
+        <div class="col-md-3 advantage-icons p-2 mb-3">
+            <i class="fa-light fa-life-ring"></i>
+            <h5 class="my-3">End-to-End Support</h5>
+        </div>
+        <div class="col-md-3 advantage-icons p-2 mb-3">
+            <i class="fa-light fa-bolt"></i>
+            <h5 class="my-3">Lighting-fast Services</h5>
+        </div>
+        <div class="col-md-3 advantage-icons p-2 mb-3">
+            <i class="fa-light fa-signal-bars"></i>
+            <h5 class="my-3">100% Online Process</h5>
+        </div>
+    </div>
+    <div class="container-fluid row px-5 py-5 bg-orange text-center">
+        <h2 class="pt-5">Why choose us?</h2>
+        <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla leo arcu, ut aliquet augue fermentum at. Curabitur ornare facilisis sollicitudin. Mauris luctus laoreet dictum. Aliquam viverra vestibulum sapien vel varius. Praesent tincidunt rutrum ante, consectetur aliquam nisi lacinia a. Etiam est odio, efficitur a eros vel, porta rutrum ex. Vivamus ultrices tristique tristique.
+        <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla leo arcu, ut aliquet augue fermentum at. Curabitur ornare facilisis sollicitudin. Mauris luctus laoreet dictum. Aliquam viverra vestibulum sapien vel varius. Praesent tincidunt rutrum ante, consectetur aliquam nisi lacinia a. Etiam est odio, efficitur a eros vel, porta rutrum ex. Vivamus ultrices tristique tristique.
+        <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla leo arcu, ut aliquet augue fermentum at. Curabitur ornare facilisis sollicitudin. Mauris luctus laoreet dictum. Aliquam viverra vestibulum sapien vel varius. Praesent tincidunt rutrum ante, consectetur aliquam nisi lacinia a. Etiam est odio, efficitur a eros vel, porta rutrum ex. Vivamus ultrices tristique tristique.</p>
+        </div>
     </div>
     <div class="section-3 row container-fluid px-5 text-center my-5 py-5">
         <h2>Latest Industry Notifications</h2>
@@ -143,6 +155,7 @@
         <a href="{{ route('site.clients') }}" class="btn btn-secondary bg-orange btn-sm col-md-3 text-center my-2 mx-auto">Read More</a>
     </div>
 @endsection
+
 @section('styles')
 
 @endsection

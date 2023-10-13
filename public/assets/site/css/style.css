@@ -46,7 +46,9 @@ body {
 	text-decoration: none;
 	color: #000;
 }
-
+.advantage-icons i {
+	font-size: 75px;
+}
 .service-nav a img{
 	width:  70px;
     height: 70px;
@@ -66,6 +68,9 @@ body {
 	color: #333;
 	min-height: 180px !important;
 	
+}
+.container-fluid {
+	min-width: 100% !important;
 }
 .service-links a img {
     width:  70px;
