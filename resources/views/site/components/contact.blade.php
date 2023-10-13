@@ -300,7 +300,7 @@
 <script type="text/javascript">
     $('#brochureForm').on('submit',function (e) {
         e.preventDefault();
-        var url = {{route('site.brochure.store')}};
+        var url = "{{route('site.brochure.store')}}";
         $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
