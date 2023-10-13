@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\site\SiteServicesController;
 use App\Http\Controllers\site\SiteProductsController;
 use App\Http\Controllers\site\SiteBlogsController;
-
+use App\Http\Controllers\site\PdfBrochureController;
 
 /*
 |--------------------------------------------------------------------------
