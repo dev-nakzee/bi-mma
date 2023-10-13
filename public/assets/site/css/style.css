@@ -47,12 +47,16 @@ body {
 	color: #000;
 }
 .home-banner {
-	height: 500px;
+	min-height: 520px;
 	background: hsl(27, 100%, 74%);
-	background-image: url('../images/mma-banner1.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: right;
+}
+@media (min-width: 991px) {
+	.home-banner {
+		background-image: url('../images/mma-banner1.png');
+	}
 }
 .advantage-icons i {
 	font-size: 75px;

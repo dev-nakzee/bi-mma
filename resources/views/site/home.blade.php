@@ -14,9 +14,26 @@
             </div>
         </div>
         </form>
-        <div class="bg-dark col-md-6 d-none" id="suggestions">
-
-        </div>
+        <ul class="contain-fluid mt-5 pt-5 ps-0 service-icon">
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon1.png') }}">
+            </li>
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon2.png') }}">
+            </li>
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon3.png') }}">
+            </li>
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon4.png') }}">
+            </li>
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon5.png') }}">
+            </li>
+            <li>
+                <img src="{{ asset('assets/site/images/services/serviceicon6.png') }}">
+            </li>
+        </ul>
     </div>
     <div class="section-2 text-center p-5 mt-3 text-grey shadow p-3 bg-white rounded">
         <h2>Prominent Product Approvals<br>For Indian Market</h2>
