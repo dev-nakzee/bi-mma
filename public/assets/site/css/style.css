@@ -219,7 +219,7 @@ a {
 	border: #4e4e4e 3px solid !important;
 	color: #4e4e4e !important;
 	font-weight: bolder;
-	margin: 2px auto !important;
+	margin: auto 2px !important;
 }
 .necessary-certifications ul.nav-pills li.nav-item button.nav-link.active {
 	border: #fd7e14 3px solid !important;
