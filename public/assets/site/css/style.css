@@ -216,11 +216,12 @@ a {
 
 .necessary-certifications ul.nav-pills li.nav-item button.nav-link {
 	background: #fff !important;
-	border: #0e4193 2px solid !important;
+	border: #4e4e4e 5px solid !important;
 	color: #4e4e4e !important;
+	margin: 2px auto !important;
 }
 .necessary-certifications ul.nav-pills li.nav-item button.nav-link.active {
-	border: #fd7e14 2px solid !important;
+	border: #fd7e14 5px solid !important;
 	color: #4e4e4e !important;
 }
 
