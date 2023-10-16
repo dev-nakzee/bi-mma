@@ -50,14 +50,17 @@
                     <div class="col-md-12">{!! $products->description !!}</div>
                 </div>
                 <div class="necessary-certifications section" id="necessary-certifications">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            @if($services)
+                            @foreach($services as $service)
+                            <button class="nav-link" id="{{$service->slug}}" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{$service->service}}</button>
+                            @endforeach
+                            @endif
+                        </div>
+                    </nav>
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    @if($services)
-                    @foreach($services as $service)
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link active" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">{{$service->service}}</button>
-                        </li>
-                    @endforeach
-                    @endif
+                    
                     </ul>
                 </div>
             </div>
