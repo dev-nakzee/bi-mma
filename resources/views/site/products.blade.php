@@ -40,11 +40,6 @@
                         </div>
                         <hr>
                         <div class="container mt-2">
-                        @if($services)
-                        @foreach($services as $service)
-                        <a class="text-center p-2 d-inline-block orange border border-secondary rounded rounded-lg" href="{{ route('site.services.index', $service->slug)}}"><img src="{{ $service->path }}"><br>{{$service->service}}</a>
-                        @endforeach
-                        @endif
                         </div>
                     </div>
                     <div class="col-md-12">{!! $products->description !!}</div>
