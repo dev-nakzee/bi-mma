@@ -69,7 +69,6 @@ body {
 	background-color: transparent;
 }
 
-
 .service-links a {
 	display: block;
 	border: #fd7e14 1px solid;
@@ -213,6 +212,10 @@ a {
 }
 .product-image {
 	width: 100%;
+}
+
+.necessary-certifications ul.nav-pills li.nav-item button.nav-link {
+	background-color: #fff;
 }
 
 @media all and (min-width: 992px) {
