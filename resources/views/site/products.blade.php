@@ -54,7 +54,7 @@
                         @if($services)
                         @foreach($services as $service)
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link @if($loop->first){{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">{{$service->service}}</button>
+                          <button class="nav-link @if($loop->first){{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><img src="{{ $service->path }}"><br>{{$service->service}}/button>
                         </li>
                         @endforeach
                         @endif
