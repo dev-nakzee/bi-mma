@@ -215,7 +215,8 @@ a {
 }
 
 .necessary-certifications ul.nav-pills li.nav-item button.nav-link {
-	background-color: #fff;
+	background-color: #fff !important;
+	border: #fd7e14 1px solid !important;
 }
 
 @media all and (min-width: 992px) {
