@@ -54,7 +54,7 @@
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             @if($services)
                             @foreach($services as $service)
-                            <button class="nav-link" id="{{$service->slug}}" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{$service->service}}</button>
+                            <button class="nav-link @if ($loop->first) {{"active"}} @endif" id="{{$service->slug}}" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{$service->service}}</button>
                             @endforeach
                             @endif
                         </div>
