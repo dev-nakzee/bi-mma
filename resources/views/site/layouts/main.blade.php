@@ -128,7 +128,7 @@
           </div>
       </div>
       <!-- Menu -->
-      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg px-5">
+      {{-- <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg px-5">
           <div class="container-fluid">
               <div class="navbar-brand">
                 <img src="{{ asset('assets/site/images/MakeMyApproval-logo-black.png') }}" id="site-logo-sticky" class="img-responsive site-logo-sticky d-none"/>
@@ -195,7 +195,7 @@
                 <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
               </div>
           </div>
-      </nav>
+      </nav> --}}
 
     <!-- Ends -->
       <div class="container-fluid px-0">
