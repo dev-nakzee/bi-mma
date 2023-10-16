@@ -51,9 +51,13 @@
                 </div>
                 <div class="necessary-certifications section" id="necessary-certifications">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        @if($services)
+                        @foreach($services as $service)
                         <li class="nav-item" role="presentation">
                           <button class="nav-link @if($loop->first){{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">{{$service->service}}</button>
                         </li>
+                        @endforeach
+                        @endif
                       </ul>
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
