@@ -12,27 +12,11 @@
                             <th>ID</th>
                             <th>Pages</th>
                             <th>Content</th>
-                            <th>Keywords</th>
                             <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pages as $page)
-                                <tr>
-                                    <td>{{ $page->id }}</td>
-                                    <td>{{ $page->title }}</td>
-                                    <td>{{ $page->content }}</td>
-                                    <td>{{ $page->keywords }}</td>
-                                    <td class="row">
-                                        <div class="mr-1"><a href="{{ route('customize.pages.edit', $page->id) }}" class="btn btn-primary btn-sm"><i class="fa-light fa-edit"></i></a></div>
-                                        <form action="{{ route('customize.pages.destroy', $page->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-light fa-trash-can"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
@@ -49,9 +33,23 @@
     <!-- form wizard --> 
     <script>
         $(document).ready(function() {
+            loadDataTable();
+        });
+        function loadDataTable() {
             var table = $('#datatable').DataTable({
                 paging: true,
+                retrieve: true,
+                processing: true,
+                serverSide: true,
+                responsive: true,
+                ajax: "{{ route('customize.pages.table') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'name', name: 'name'},
+                    {data: 'description', name: 'description'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
+                ]
             });
-        });
+        }
     </script>
 @endsection

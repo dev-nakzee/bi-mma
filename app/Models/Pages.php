@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Pages extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name', 
+        'url', 
+        'template_id', 
+        'content', 
+        'img_alt', 
+        'pg_image', 
+        'pg_short', 
+        'title', 
+        'description', 
+        'meta', 
+        'keywords', 
+        'admin_id', 
+        'status',
+    ];
 }

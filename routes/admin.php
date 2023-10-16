@@ -88,6 +88,8 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group( function(
     Route::controller(PagesController::class)->group(function(){
         Route::get('/customize/pages', 'index')->name('customize.pages.index');
         Route::get('/customize/pages/new', 'create')->name('customize.pages.new');
+        Route::get('/customize/pages/show/dataTable', 'show')->name('customize.pages.table');
+        Route::post('/customize/pages/save', 'store')->name('customize.pages.save');
         Route::get('/customize/pages/edit/{{$id}}', 'edit')->name('customize.pages.edit');
         Route::get('/customize/pages/delete/{{$id}}', 'destroy')->name('customize.pages.destroy');
     });

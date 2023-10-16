@@ -44,15 +44,83 @@
   </head>
   <body>
       <div class="container-fuild">
-          <div class="col-12 bg-dark p-1 top-bar">
+          {{-- <div class="col-12 bg-dark p-1 top-bar">
             <a class="text-light ms-3" href="#"><i class="fa-light fa-globe"></i> Click for global enquiries</a>
             <a class="text-light me-2 float-end" href="tel:123-456-7890"><i class="fa fa-phone"></i> 123-456-7890</a>
             <a class="text-light me-3 float-end" href = "mailto:abc@example.com"><i class="fa fa-envelope"></i> abc@example.com</a>
-          </div>
+          </div> --}}
           <div class="col-12 row bg-light px-5">
             <div class="col-3"> 
               <a href="{{ route('site.home')}}"><img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/></a>
             </div>
+            <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg px-5">
+              <div class="container-fluid">
+                  <div class="navbar-brand">
+                    <img src="{{ asset('assets/site/images/MakeMyApproval-logo-black.png') }}" id="site-logo-sticky" class="img-responsive site-logo-sticky d-none"/>
+                  </div>
+                  <!-- Nav Toggle Button -->
+                  <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <!-- Nav Links -->
+                  <div class="collapse navbar-collapse lh-lg" id="main_nav">
+                    <ul class="navbar-nav p-3 p-md-0">
+                        <li class="nav-item"> <a class="nav-link active" href="{{ route('site.home')}}">Home</a></li>
+                        <!-- Mega Menu -->
+                        <li class="nav-item dropdown ktm-mega-menu">
+                          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                          <!-- Mega Menu -->
+                          <div class="dropdown-menu mega-menu p-3">
+                              <div class="container-fluid row px-5">
+                                @if($services)
+                                @foreach($services as $service)
+                                <div class="col-md-3 service-nav">
+                                  <a href="{{ route('site.services.index',$service->slug)}}" class="card">
+                                    <div class="card-body">
+                                      <img src="{{ url($service->path)}}">
+                                      <h5 class="card-title">{{ $service->service }}</h5>
+                                    </div>
+                                  </a>
+                                </div>
+                                @endforeach
+                                @endif
+                              </div>
+                          </div>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('site.blogs')}}">Blogs</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('site.contact')}}">Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <div class="btn-group">
+                      <button class="btn btn-outline-dark btn-sm me-2 mb-1 float-end" type="button" id="navbarRegisterBtn" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="inside" aria-expanded="false">
+                        <i class="fa fa-user-plus"></i> <span class="">Register</span>
+                      </button>
+                      <form class="dropdown-menu dropdown-menu-start p-4" aria-labelledby="navbarRegisterBtn">
+                        <div class="mb-3">
+                          <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                            <label class="form-check-label" for="dropdownCheck2">
+                              Remember me
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </form>
+                    </div>
+                    <a href="{{ route('login') }}" class="btn btn-outline-dark btn-sm me-2 mb-1 float-end"><i class="fa fa-user"></i> <span class="">Login<i></a>
+                  </div>
+              </div>
+          </nav>
             <div class="col-9 pe-0">
               <img class="header-img p-2 float-end d-none d-lg-inline" src="{{ asset('assets/site/images/raclogo1.png')}}"/>
               <img class="header-img p-2 float-end d-none d-lg-inline" src="{{ asset('assets/site/images/aajadi.jpg')}}"/>
