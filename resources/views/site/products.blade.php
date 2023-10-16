@@ -24,7 +24,7 @@
             <div class="col-md-3 bg-white border-rounded" id="sidebar-products">
                 <div id="service-details" class="list-group">
                     <a class="list-group-item list-group-item-action action-url" href="#about-product">About Product</a>
-                    <a class="list-group-item list-group-item-action action-url" href="#necessary-certifications">Documents Required</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#necessary-certifications">Necessary Certifications</a>
                     <a class="list-group-item list-group-item-action action-url" href="#industry-notifications">Industry Notification</a>
                 </div>
             </div>
