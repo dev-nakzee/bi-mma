@@ -54,15 +54,15 @@
                         @if($services)
                         @foreach($services as $service)
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link @if($loop->first){{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><img src="{{ $service->path }}"><br>{{$service->service}}/button>
+                          <button class="nav-link @if($loop->first){{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="pill" data-bs-target="#{{$service->slug}}-pill" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><img src="{{ $service->path }}"><br>{{$service->service}}</button>
                         </li>
                         @endforeach
                         @endif
                       </ul>
                       <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                        <div class="tab-pane fade show @if($loop->first){{"active"}}@endif" id="{{$service->slug}}-pill" role="tabpanel" aria-labelledby="pills-home-tab">
+                            {!! $products->documents_required !!}
+                        </div>
                       </div>
                 </div>
             </div>
