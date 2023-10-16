@@ -60,9 +60,12 @@
                         <div class="tab-pane fade show @if($loop->first){{"active"}}@endif" id="{{$service->slug}}-pill" role="tabpanel" aria-labelledby="pills-home-tab">
                             <h3>{{$service->service}}</h3>
                             {!! $service->description !!}
-                            <div>
-
-                            </div>
+                            <h5>Required documents</h5>
+                            {!! $service->documents !!}
+                            <h5>Certification Process</h5>
+                            {!! $service->process !!}
+                            <h5>Standard cost &amp; time</h5>
+                            {!! $service->stdcosttime !!}
                         </div>
                         @endforeach
                         @endif
