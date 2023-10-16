@@ -54,14 +54,18 @@
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             @if($services)
                             @foreach($services as $service)
-                            <button class="nav-link @if ($loop->first) {{"active"}} @endif" id="{{$service->slug}}" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{$service->service}}</button>
+                            <button class="nav-link @if($loop->first) {{"active"}}@endif" id="{{$service->slug}}" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{$service->service}}</button>
                             @endforeach
                             @endif
                         </div>
                     </nav>
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    
-                    </ul>
+                    <div class="tab-content" id="nav-tabContent">
+                        @if($services)
+                        @foreach($services as $service)
+                        <div class="tab-pane fade show active" id="{{$service->slug}}-content" role="tabpanel" aria-labelledby="{{$service->slug}}">...</div>
+                        @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
