@@ -50,9 +50,6 @@
             <a class="text-light me-3 float-end" href = "mailto:abc@example.com"><i class="fa fa-envelope"></i> abc@example.com</a>
           </div> --}}
           <div class="col-12 row bg-light px-5">
-            <div class="col-3"> 
-              <a href="{{ route('site.home')}}"><img class="site-logo p-2 ps-3" src="{{ asset('assets/site/images/logomma.png')}}"/></a>
-            </div>
             <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-orange shadow-lg px-5">
               <div class="container-fluid">
                   <div class="navbar-brand">
