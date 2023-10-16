@@ -60,9 +60,13 @@
                         @endif
                       </ul>
                       <div class="tab-content" id="pills-tabContent">
+                        @if($services)
+                        @foreach($services as $service)
                         <div class="tab-pane fade show @if($loop->first){{"active"}}@endif" id="{{$service->slug}}-pill" role="tabpanel" aria-labelledby="pills-home-tab">
                             {!! $products->documents_required !!}
                         </div>
+                        @endforeach
+                        @endif
                       </div>
                 </div>
             </div>
