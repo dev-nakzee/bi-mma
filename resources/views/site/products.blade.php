@@ -63,8 +63,8 @@
                         @if($services)
                         @foreach($services as $service)
                         <div class="tab-pane fade show @if($loop->first){{"active"}}@endif" id="{{$service->slug}}-pill" role="tabpanel" aria-labelledby="pills-home-tab">
-                            <h3>{{$services->service}}</h3>
-                            {!! $services->description !!}
+                            <h3>{{$service->service}}</h3>
+                            {!! $service->description !!}
                             <div>
 
                             </div>
