@@ -24,9 +24,7 @@
             <div class="col-md-3 bg-white border-rounded" id="sidebar-products">
                 <div id="service-details" class="list-group">
                     <a class="list-group-item list-group-item-action action-url" href="#about-product">About Product</a>
-                    <a class="list-group-item list-group-item-action action-url" href="#required-documentation">Documents Required</a>
-                    <a class="list-group-item list-group-item-action action-url" href="#registration-process">Registration Process</a>
-                    <a class="list-group-item list-group-item-action action-url" href="#download-info-guidelines">Download Info & Guideline</a>
+                    <a class="list-group-item list-group-item-action action-url" href="#necessary-certifications">Documents Required</a>
                     <a class="list-group-item list-group-item-action action-url" href="#industry-notifications">Industry Notification</a>
                 </div>
             </div>
@@ -51,7 +49,7 @@
                     </div>
                     <div class="col-md-12">{!! $products->description !!}</div>
                 </div>
-                <div class="required-documentation section" id="required-documentation">
+                <div class="necessary-certifications section" id="necessary-certifications">
                     @if($services)
                     @foreach($services as $service)
                     <h4>
@@ -64,39 +62,6 @@
                     </div>
                     @endforeach
                     @endif
-                </div>
-                <div class="registration-process section" id="registration-process">
-                    @if($services)
-                    @foreach($services as $service)
-                    <h4>
-                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
-                            {{$service->service}} Registration Process for {{$products->product}}
-                        </span>
-                    </h4>
-                    <div>
-                        {!! $service->process!!}
-                    </div>
-                    @endforeach
-                    @endif
-                </div>
-                <div class="guidelines-section section" id="download-info-guidelines">
-                    <h4>
-                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
-                            Download Info & Guidelines
-                        </span>
-                    </h4>
-                    <div>
-
-                    </div>
-                </div>
-                <div class="notification-section section" id="industry-notifications">
-                    <h4>
-                        <span style="font-size: calc(1.275rem + .3vw);color:rgb(255, 102, 0);">
-                            Industry Notification
-                        </span>
-                    </h4>
-                    <div>
-                    </div>
                 </div>
             </div>
         </div>
